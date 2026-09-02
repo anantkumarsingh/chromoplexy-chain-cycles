@@ -1,0 +1,611 @@
+ERG fusion patients: 26
+
+=== ERG FUSION PATIENTS — AMG COMPLEXITY ===
+           Individual   k  k_local  chain_size           fusion_type                      source Gleason Score Pathological stage
+9            P07-4941  22       12          31  chromoplexy_embedded             site_annotation           3+3               pT2c
+0              P01-28  15        8          22  chromoplexy_embedded             site_annotation           4+4               pT3a
+52            PR-7520  23        8          11  chromoplexy_embedded             site_annotation           NaN         Metastatic
+6            P05-3852  17        8          32  chromoplexy_embedded             site_annotation         4+3;5               pT3a
+39         PR-08-2153  15        7          10  chromoplexy_embedded             site_annotation           4+3               pT3a
+37         PR-07-4610  19        7          17  chromoplexy_embedded             site_annotation           3+4               pT3a
+34         PR-06-3199  15        6           8  chromoplexy_embedded             site_annotation           4+3               pT3a
+23             P09-37  17        5           6  chromoplexy_embedded             site_annotation           3+4               pT3b
+2            P03-2345  14        5          15  chromoplexy_embedded             site_annotation           3+4               pT2c
+17            P08-492  14        4           4  chromoplexy_embedded             site_annotation           3+4               pT2c
+1            P03-1426  23        4           5  chromoplexy_embedded             site_annotation           4+3               pT2c
+30         PR-04-1243  20        4           3  chromoplexy_embedded             site_annotation           3+4               pT3a
+48            PR-2621   8        4           6  chromoplexy_embedded             site_annotation           3+4               pT2c
+11           P07-5037  18        3           3  chromoplexy_embedded             site_annotation           4+3               pT3a
+22           P09-1042  16        3           7  chromoplexy_embedded             site_annotation           3+4               pT3a
+44          PR-09-146  19        2           1         simple_fusion             site_annotation           3+4               pT3a
+18            P08-501  16        2           1         simple_fusion             site_annotation           3+3               pT2c
+53  PR-STID0000000415  15        1           0         simple_fusion  site_annotation_intra_only           4+4               pT3a
+45         PR-09-3983  11        1           0         simple_fusion  site_annotation_intra_only           4+5               pT3b
+3            P04-1084  18        1           0         simple_fusion  site_annotation_intra_only           3+4               pT3a
+43          PR-08-784  14        1           0         simple_fusion  site_annotation_intra_only           4+3               pT2c
+40         PR-08-2455  14        1           0         simple_fusion  site_annotation_intra_only           4+4               pT3b
+14           P08-1042  15        1           0         simple_fusion  site_annotation_intra_only           3+4               pT3a
+4            P05-1657   5        1           0         simple_fusion  site_annotation_intra_only           3+4               pT2b
+5            P05-2709  10        1           0         simple_fusion  site_annotation_intra_only           3+5               pT3a
+55  PR-STID0000002872   7        1           0         simple_fusion  site_annotation_intra_only           3+4               pT3a
+
+=== FUSION TYPE COUNTS ===
+fusion_type
+chromoplexy_embedded    15
+simple_fusion           11
+Name: count, dtype: int64
+
+=== SOURCE BREAKDOWN ===
+source
+site_annotation               17
+site_annotation_intra_only     9
+Name: count, dtype: int64
+
+=== CHROMOPLEXY EMBEDDED — AMG SUMMARY ===
+n                  : 15
+median k_local     : 5.0
+median chain_size  : 8.0
+median total_DSBs  : 138.0
+median pct_inter   : 43.2%
+k_local > 2 count  : 15
+k_local > 3 count  : 13
+
+=== SIMPLE FUSION — AMG SUMMARY ===
+n                  : 11
+median k_local     : 1.0
+median chain_size  : 0.0
+median total_DSBs  : 68.0
+median pct_inter   : 28.6%
+
+=== ERG FUSION CHAIN DETAILS PER PATIENT ===
+
+Patient: P01-28  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 8
+  chain_size : 22 rearrangements
+  chromosomes: [1.0, 2.0, 3.0, 4.0, 9.0, 17.0, 19.0, 21.0]
+  genes at breakpoints:
+      Intron of CSMD2(-): 738bp after exon 45
+      Intron of PADI6(+): 648bp before exon 16
+      IGR: 23Kb before MFSD2A(+)
+      Intron of TMEM201(+): 27bp before exon 5
+      Intron of ZC3H11A(+): 4Kb before exon 7
+      IGR: 2Kb after UTP11L(+)
+      Intron of TMEM201(+): 1Kb after exon 4
+      Intron of CSMD2(-): 2Kb before exon 38
+      IGR: 1Kb after UTP11L(+)
+      IGR: 8Kb after MFSD2A(+)
+      Intron of RERE(-): 3Kb before exon 6
+      Intron of CHD5(-): 935bp before exon 12
+      IGR: 628bp before PLEKHA6(-)
+      Intron of PADI6(+): 717bp before exon 16
+      Intron of TMEM201(+): 41bp before exon 5
+      IGR: 27Kb before PLCH2(+)
+      Intron of YIPF1(-): 728bp before exon 7
+      Intron of FAF1(-): 5Kb after exon 7
+      5'-UTR of DAB1(-): 70Kb before coding start
+      IGR: 15Kb before PLCH2(+)
+      Intron of ARHGEF3(-): 35Kb before exon 3
+      Intron of YIPF1(-): 510bp before exon 7
+      Intron of ARHGEF3(-): 35Kb before exon 3
+      Intron of ERG(-): 10Kb after exon 1
+      5'-UTR of MIR548N(+): 158Kb before coding start
+      Intron of C17orf49(+): 9bp after exon 3
+      Intron of TMPRSS2(-): 340bp before exon 6
+      Exon 186 of TTN(-)
+      Intron of RNASEK(+): 175bp before exon 3
+      Intron of SURF4(-): 150bp before exon 6
+      Intron of UBXN7(-): 1Kb before exon 4
+      Intron of ABL1(+): 4Kb after exon 4
+      IGR: 614bp after CNTROB(+)
+      IGR: 51Kb before TEKT3(-)
+      IGR: 161Kb before DAPK1(+)
+      Intron of UBXN7(-): 1Kb before exon 4
+      Intron of RNASEK(+): 130bp before exon 3
+      Intron of TRPM4(+): 2Kb before exon 10
+      Intron of TMPRSS2(-): 476bp before exon 7
+      Intron of NUP35(+): 324bp after exon 7
+      IGR: 498Kb before PCDH7(+)
+      IGR: 7Kb before MEIS3(-)
+      Intron of TMPRSS2(-): 247bp before exon 4
+      Intron of NUP35(+): 333bp after exon 7
+
+Patient: P03-1426  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 4
+  chain_size : 5 rearrangements
+  chromosomes: [1.0, 7.0, 21.0, 22.0]
+  genes at breakpoints:
+      Intron of JAZF1(-): 17Kb after exon 1
+      Intron of JAZF1(-): 17Kb after exon 1
+      IGR: 5Kb after RSBN1L(+)
+      IGR: 23Kb before ZNF648(-)
+      IGR: 89Kb before IER5(+)
+      Intron of ERG(-): 65Kb before exon 4
+      IGR: 4Kb after BACE2(+)
+      Promoter of SLC25A18(+): 854bp from tx start
+      Intron of PPP1R9A(+): 1Kb after exon 5
+      Intron of PPP1R9A(+): 1Kb after exon 5
+
+Patient: P03-2345  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 5
+  chain_size : 15 rearrangements
+  chromosomes: [4.0, 5.0, 11.0, 20.0, 21.0]
+  genes at breakpoints:
+      IGR: 44Kb before GNPDA1(-)
+      IGR: 673Kb before ISL1(+)
+      Intron of ZCCHC9(+): 453bp after exon 2
+      IGR: 198Kb before SPOCK1(-)
+      Intron of AP3B1(-): 1Kb before exon 23
+      Intron of AP3B1(-): 23Kb before exon 23
+      IGR: 45Kb before GNPDA1(-)
+      Intron of PDE4D(-): 161Kb after exon 1
+      Intron of GNPDA1(-): 739bp after exon 2
+      Intron of SGCD(+): 79Kb before exon 4
+      IGR: 6Kb before PPP1R2P3(+)
+      IGR: 198Kb before SPOCK1(-)
+      IGR: 5Kb before KIF2A(+)
+      Exon 36 of PREX1(-)
+      IGR: 6Kb after CYP2U1(+)
+      IGR: 59Kb before SORL1(+)
+      IGR: 69Kb before SORL1(+)
+      IGR: 225Kb before BUD13(-)
+      Intron of TMPRSS2(-): 3Kb before exon 6
+      Intron of CASP4(-): 33bp after exon 5
+      IGR: 18Kb before PDGFD(-)
+      Intron of SORL1(+): 3Kb before exon 4
+      Intron of ARHGEF12(+): 1Kb after exon 15
+      Intron of DIXDC1(+): 109bp before exon 5
+      IGR: 42Kb before TMPRSS13(-)
+      Intron of ARHGEF12(+): 19Kb before exon 2
+      Intron of TMPRSS2(-): 3Kb before exon 6
+      IGR: 211Kb before BUD13(-)
+      IGR: 6Kb before DSCR10(+)
+      IGR: 467Kb before PIK3R1(+)
+
+Patient: P04-1084  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      3'-UTR of TMPRSS2(-): 1Kb after coding stop
+      Intron of ERG(-): 516bp after exon 1
+      Intron of ERG(-): 25Kb before exon 4
+      Intron of ERG(-): 25Kb before exon 4
+      Intron of TMPRSS2(-): 2Kb before exon 3
+      5'-UTR of ADARB1(+): 31Kb before coding start
+      3'-UTR of TMPRSS2(-): 826bp after coding stop
+      Intron of TMPRSS2(-): 2Kb before exon 3
+      Intron of ERG(-): 55Kb before exon 4
+      5'-UTR of ADARB1(+): 31Kb before coding start
+
+Patient: P05-1657  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      5'-UTR of ERG(-): 57Kb before coding start
+      Intron of TMPRSS2(-): 4Kb before exon 2
+
+Patient: P05-2709  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 13Kb after exon 1
+      Intron of TMPRSS2(-): 3Kb before exon 2
+
+Patient: P05-3852  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 8
+  chain_size : 32 rearrangements
+  chromosomes: [1.0, 3.0, 6.0, 9.0, 13.0, 18.0, 19.0, 21.0]
+  genes at breakpoints:
+      3'-UTR of SMAD4(+): 2Kb after coding stop
+      IGR: 15Kb before TMEM108(+)
+      IGR: 16Kb after UST(+)
+      5'-UTR of SLC14A2(+): 2Kb before coding start
+      IGR: 164Kb before CTTNBP2NL(+)
+      IGR: 4Kb after TFB1M(-)
+      IGR: 14Kb before TMEM108(+)
+      IGR: 29Kb after CHST9(-)
+      5'-UTR of SLC14A2(+): 2Kb before coding start
+      IGR: 29Kb before QKI(+)
+      Intron of UST(+): 1Kb before exon 4
+      3'-UTR of SFRS3(+): 2Kb after coding stop
+      IGR: 26Kb before C13orf31(+)
+      Intron of TNFSF11(+): 5Kb after exon 2
+      Intron of TIAM2(+): 379bp after exon 22
+      IGR: 5Kb before OR14J1(+)
+      IGR: 7Kb before C6orf118(-)
+      Intron of CD109(+): 2Kb after exon 14
+      Intron of EPSTI1(-): 7Kb before exon 7
+      IGR: 3Kb before MBD2(-)
+      Intron of TMEM108(+): 784bp before exon 5
+      IGR: 29Kb before QKI(+)
+      IGR: 33Kb after CHST9(-)
+      Intron of UST(+): 2Kb after exon 1
+      Intron of ACPP(+): 282bp after exon 9
+      3'-UTR of SFRS3(+): 2Kb after coding stop
+      IGR: 26Kb before C13orf31(+)
+      IGR: 290Kb before FRK(-)
+      IGR: 16Kb after RANBP9(-)
+      IGR: 64Kb before RBM16(+)
+      3'-UTR of GNL1(-): 3Kb after coding stop
+      Intron of SETBP1(+): 31Kb after exon 3
+      Intron of TMPRSS2(-): 5Kb after exon 1
+      IGR: 690Kb before COL12A1(-)
+      Intron of SLC14A2(+): 239bp after exon 2
+      IGR: 74Kb before NCRNA00111(+)
+      5'-UTR of DAAM2(+): 25Kb before coding start
+      Intron of TMPRSS2(-): 848bp before exon 4
+      Exon 8 of NHSL1(-)
+      Exon 4 of CYP2A6(-)
+      Intron of TMPRSS2(-): 2Kb after exon 3
+      IGR: 3Kb before MBD2(-)
+      Intron of SLC14A2(+): 1Kb after exon 4
+      5'-UTR of CYP2A6(-): 20bp before coding start
+      Intron of CHST9(-): 21Kb before exon 5
+      IGR: 523Kb before SYT4(-)
+      Intron of EPSTI1(-): 6Kb before exon 7
+      Intron of CHST9(-): 7Kb before exon 6
+      IGR: 6Kb after SMAD4(+)
+      IGR: 386Kb before DMRT2(+)
+      IGR: 29Kb after CHST9(-)
+      Intron of ERG(-): 16Kb after exon 3
+      Intron of MYO6(+): 674bp before exon 30
+      Intron of TMPRSS2(-): 313bp before exon 10
+      Intron of TMPRSS2(-): 2Kb after exon 3
+      Intron of SETBP1(+): 27Kb after exon 3
+      IGR: 31Kb after ATG5(-)
+      IGR: 93Kb before TCF4(-)
+      Intron of DOPEY2(+): 3Kb before exon 24
+      Intron of SMARCA2(+): 389bp after exon 2
+      Intron of TNFSF11(+): 6Kb after exon 2
+      IGR: 4Kb before DSG4(+)
+      IGR: 14Kb before DSCR10(+)
+      IGR: 73Kb before NCRNA00111(+)
+
+Patient: P07-4941  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 12
+  chain_size : 31 rearrangements
+  chromosomes: [1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 16.0, 17.0, 19.0, 20.0, 21.0]
+  genes at breakpoints:
+      IGR: 43Kb before IYD(+)
+      Intron of NOTCH2(-): 1Kb before exon 4
+      IGR: 42Kb before LOC146880(-)
+      3'-UTR of TRPM8(+): 5Kb after coding stop
+      Intron of MAD1L1(-): 23Kb before exon 11
+      Intron of SCN9A(-): 3Kb after exon 18
+      Intron of HTT(+): 519bp before exon 65
+      IGR: 66Kb before NACAP1(+)
+      Intron of SCN9A(-): 2Kb before exon 18
+      Promoter of TRA2B(-): 2Kb from tx start
+      IGR: 592Kb before DUSP26(-)
+      Intron of SCN9A(-): 10Kb before exon 18
+      Intron of SCN9A(-): 3Kb after exon 18
+      5'-UTR of ANKRD46(-): 14Kb before coding start
+      Intron of TRPM8(+): 132bp before exon 25
+      IGR: 6Kb after CPNE4(-)
+      Intron of HTT(+): 959bp after exon 64
+      5'-UTR of NCALD(-): 118Kb before coding start
+      Intron of NOTCH2(-): 1Kb before exon 4
+      Intron of MAD1L1(-): 23Kb before exon 11
+      Intron of RAD18(-): 3Kb after exon 2
+      IGR: 117Kb before ACPP(+)
+      IGR: 6Kb before GRIA2(+)
+      5'-UTR of ANKRD46(-): 9Kb before coding start
+      Intron of RAD18(-): 3Kb after exon 2
+      IGR: 14Kb after CPNE4(-)
+      Intron of SCN9A(-): 10Kb before exon 18
+      Intron of SCN9A(-): 2Kb before exon 18
+      IGR: 50Kb before LOC146880(-)
+      Intron of CSMD3(-): 3Kb after exon 3
+      Intron of COLEC10(+): 108bp after exon 2
+      IGR: 50Kb after FAM20A(-)
+      Promoter of HGSNAT(+): 3Kb from tx start
+      Intron of TMPRSS2(-): 1Kb after exon 5
+      Intron of NAALADL2(+): 11Kb after exon 9
+      Intron of TBKBP1(+): 3Kb before exon 7
+      Intron of DMPK(-): 243bp before exon 11
+      Intron of GAS7(-): 28Kb after exon 1
+      IGR: 20Kb after DSCAM(-)
+      Intron of DMPK(-): 229bp before exon 11
+      Intron of ITSN1(+): 286bp before exon 37
+      IGR: 454Kb before KCNJ2(+)
+      5'-UTR of ANKRD46(-): 9Kb before coding start
+      IGR: 20Kb before FLJ25363(+)
+      Intron of TMPRSS2(-): 209bp before exon 8
+      Intron of NAALADL2(+): 22Kb before exon 3
+      Intron of DSCAM(-): 255bp after exon 1
+      Intron of GAS7(-): 28Kb after exon 1
+      Intron of TMPRSS2(-): 622bp before exon 6
+      Intron of SGCZ(-): 36Kb after exon 1
+      IGR: 20Kb before ITGB3(+)
+      IGR: 2Kb after UTP23(+)
+      IGR: 150Kb before TNFRSF11B(-)
+      IGR: 50Kb after FAM20A(-)
+      Intron of TMEM50B(-): 930bp before exon 5
+      Intron of CSMD3(-): 11Kb before exon 4
+      IGR: 20Kb after DSCAM(-)
+      IGR: 1Kb before TMPRSS2(-)
+      3'-UTR of KLKP1(-): 11Kb after coding stop
+      IGR: 5Kb after EYA2(+)
+      IGR: 5Kb before TMCO7(+)
+      Promoter of CEACAM8(-): 3Kb from tx start
+
+Patient: P07-5037  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 3
+  chain_size : 3 rearrangements
+  chromosomes: [10.0, 21.0, 22.0]
+  genes at breakpoints:
+      Intron of MSMB(+): 90bp before exon 2
+      Intron of MSMB(+): 1Kb before exon 4
+      Intron of C10orf11(+): 20Kb before exon 6
+      Intron of ERG(-): 61Kb before exon 4
+      Intron of TMPRSS2(-): 52bp after exon 7
+      Intron of SYNGR1(+): 2Kb before exon 4
+
+Patient: P08-1042  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 2Kb after exon 1
+      Intron of TMPRSS2(-): 4Kb after exon 1
+
+Patient: P08-492  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 4
+  chain_size : 4 rearrangements
+  chromosomes: [1.0, 14.0, 15.0, 21.0]
+  genes at breakpoints:
+      IGR: 32Kb before DAD1(-)
+      Intron of GPR176(-): 2Kb after exon 2
+      IGR: 5Kb before SRRM1(+)
+      IGR: 5Kb before SRRM1(+)
+      IGR: 346Kb before NCRNA00158(-)
+      5'-UTR of ERG(-): 81Kb before coding start
+      IGR: 344Kb before NCRNA00158(-)
+      Intron of FSIP1(-): 823bp after exon 5
+
+Patient: P08-501  [simple_fusion]  source=site_annotation
+  k_local    : 2
+  chain_size : 1 rearrangements
+  chromosomes: [1.0, 21.0]
+  genes at breakpoints:
+      Intron of ABL2(-): 41Kb before exon 2
+      IGR: 15Kb before S100B(-)
+
+Patient: P09-1042  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 3
+  chain_size : 7 rearrangements
+  chromosomes: [13.0, 18.0, 21.0]
+  genes at breakpoints:
+      Intron of SMCHD1(+): 1Kb after exon 3
+      Intron of SMCHD1(+): 850bp after exon 5
+      Intron of EFHA1(-): 11Kb after exon 1
+      Intron of ENOSF1(-): 824bp before exon 2
+      Intron of EFHA1(-): 16Kb before exon 2
+      Intron of EFHA1(-): 11Kb after exon 1
+      Promoter of C1QTNF9B(-): 576bp from tx start
+      5'-UTR of MX2(+): 8Kb before coding start
+      5'-UTR of MX2(+): 3Kb before coding start
+      5'-UTR of ERG(-): 23Kb before coding start
+      Intron of MX2(+): 3Kb after exon 5
+      Intron of TMPRSS2(-): 989bp before exon 8
+      Intron of ITSN1(+): 2Kb before exon 17
+      Intron of SMCHD1(+): 5Kb after exon 5
+
+Patient: P09-37  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 5
+  chain_size : 6 rearrangements
+  chromosomes: [1.0, 6.0, 10.0, 12.0, 16.0]
+  genes at breakpoints:
+      IGR: 100Kb before SUPT3H(-)
+      Intron of FAF1(-): 45Kb before exon 2
+      Intron of SUPT3H(-): 58Kb after exon 4
+      Intron of RTKN2(-): 6Kb after exon 6
+      IGR: 1Mb before XPNPEP1(-)
+      Intron of RTKN2(-): 6Kb after exon 6
+      Intron of PTEN(+): 7Kb after exon 5
+      IGR: 181Kb before RNLS(-)
+      Intron of RNLS(-): 3Kb after exon 5
+      Intron of FTO(+): 29Kb before exon 2
+      IGR: 435Kb before MED13L(-)
+      IGR: 8Kb before TMEM114(-)
+
+Patient: PR-04-1243  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 4
+  chain_size : 3 rearrangements
+  chromosomes: [4.0, 7.0, 12.0, 21.0]
+  genes at breakpoints:
+      Intron of DGKB(-): 11Kb after exon 24
+      5'-UTR of FAM190A(+): 178Kb before coding start
+      IGR: 62Kb before PAH(-)
+      IGR: 330Kb before MIR802(+)
+      IGR: 27Kb before RUNX1(-)
+      IGR: 278Kb before MIR802(+)
+
+Patient: PR-06-3199  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 6
+  chain_size : 8 rearrangements
+  chromosomes: [1.0, 7.0, 8.0, 10.0, 12.0, 21.0]
+  genes at breakpoints:
+      5'-UTR of SLC45A3(-): 4Kb before coding start
+      IGR: 5Kb before JUN(-)
+      IGR: 5Kb before JUN(-)
+      IGR: 1Mb before PRMT6(+)
+      IGR: 1Mb before PRMT6(+)
+      Intron of AKR1E2(+): 58bp before exon 2
+      Intron of ACCN3(+): 118bp before exon 7
+      IGR: 1Mb before PRMT6(+)
+      Intron of ERG(-): 12Kb after exon 1
+      Intron of KIAA1429(-): 3Kb before exon 17
+      IGR: 72Kb before NECAB1(+)
+      IGR: 5Kb before PEBP1(+)
+      Intron of VSIG10(-): 295bp after exon 1
+      Intron of ERG(-): 12Kb after exon 1
+      IGR: 46Kb after AKR1C4(+)
+      Intron of VSIG10(-): 649bp after exon 1
+
+Patient: PR-07-4610  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 7
+  chain_size : 17 rearrangements
+  chromosomes: [3.0, 5.0, 6.0, 10.0, 13.0, 21.0, 22.0]
+  genes at breakpoints:
+      Intron of EAF2(+): 3Kb before exon 3
+      Intron of OSBPL10(-): 7Kb before exon 2
+      Intron of EAF2(+): 4Kb before exon 3
+      5'-UTR of GOLGB1(-): 671bp before coding start
+      Intron of TULP4(+): 9Kb after exon 1
+      Intron of CAMK2A(-): 2Kb after exon 13
+      Promoter of GOLGB1(-): 3Kb from tx start
+      IGR: 41Kb after MINPP1(+)
+      IGR: 226bp before MYLK(-)
+      Intron of EAF2(+): 4Kb after exon 1
+      Intron of PCCA(+): 9Kb before exon 7
+      IGR: 33bp before MYLK(-)
+      IGR: 247Kb before PPAPDC1A(+)
+      IGR: 135Kb before FGFR2(-)
+      Intron of OSBPL10(-): 7Kb before exon 2
+      Intron of PCCA(+): 9Kb before exon 7
+      Promoter of FGFR2(-): 189bp from tx start
+      Intron of CUBN(-): 193bp before exon 30
+      Intron of CUBN(-): 6Kb before exon 29
+      IGR: 53Kb before ADRA2A(+)
+      IGR: 145Kb before HABP2(+)
+      Intron of C10orf11(+): 111Kb after exon 4
+      Intron of CCDC109A(+): 53Kb before exon 2
+      IGR: 260Kb before PPAPDC1A(+)
+      IGR: 22Kb before XBP1(-)
+      Intron of RNLS(-): 73Kb after exon 4
+      Intron of RNLS(-): 47Kb after exon 4
+      Intron of TMPRSS2(-): 2Kb before exon 6
+      IGR: 17Kb before DDIT4(+)
+      IGR: 38Kb before CSF2RB(+)
+      IGR: 37Kb before C22orf33(-)
+      IGR: 58Kb before PAPSS2(+)
+      Intron of TMPRSS2(-): 1Kb before exon 3
+      IGR: 38Kb before C22orf33(-)
+
+Patient: PR-08-2153  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 7
+  chain_size : 10 rearrangements
+  chromosomes: [8.0, 10.0, 13.0, 14.0, 16.0, 21.0, 23.0]
+  genes at breakpoints:
+      IGR: 87Kb before CNTNAP4(+)
+      IGR: 5Kb after PCDH17(+)
+      IGR: 72Kb before CNTNAP4(+)
+      Intron of C10orf26(+): 25Kb before exon 2
+      Intron of ZFHX3(-): 16Kb before exon 4
+      Intron of ZFHX3(-): 16Kb before exon 4
+      5'-UTR of SGK196(+): 8Kb before coding start
+      3'-UTR of FLJ31306(-): 4Kb after coding stop
+      IGR: 170Kb before CDH5(+)
+      IGR: 8Kb before HUNK(+)
+      IGR: 24Kb after TMPRSS15(-)
+      Intron of TMPRSS15(-): 5Kb before exon 22
+      Intron of TMPRSS15(-): 334bp after exon 16
+      Intron of TMPRSS15(-): 5Kb before exon 22
+      IGR: 29Kb after TMPRSS15(-)
+      Intron of TMPRSS15(-): 4Kb after exon 10
+      Intron of TMPRSS15(-): 360bp after exon 16
+      IGR: 78Kb before NCRNA00111(+)
+      Intron of TMPRSS15(-): 3Kb after exon 13
+      IGR: 49Kb before VCX3A(-)
+
+Patient: PR-08-2455  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 27Kb after exon 3
+      Intron of TMPRSS2(-): 803bp before exon 3
+
+Patient: PR-08-784  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 55Kb after exon 3
+      Intron of TMPRSS2(-): 4Kb after exon 1
+
+Patient: PR-09-146  [simple_fusion]  source=site_annotation
+  k_local    : 2
+  chain_size : 1 rearrangements
+  chromosomes: [2.0, 21.0]
+  genes at breakpoints:
+      5'-UTR of GTF3C2(-): 12Kb before coding start
+      Exon 10 of DIP2A(+)
+
+Patient: PR-09-3983  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 58Kb before exon 4
+      Intron of TMPRSS2(-): 1Kb before exon 2
+
+Patient: PR-2621  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 4
+  chain_size : 6 rearrangements
+  chromosomes: [1.0, 8.0, 15.0, 21.0]
+  genes at breakpoints:
+      5'-UTR of SLC45A3(-): 9Kb before coding start
+      Intron of DAB1(-): 63Kb before exon 5
+      IGR: 550Kb before PPAP2B(-)
+      Intron of TNFRSF8(+): 3Kb after exon 3
+      Intron of MTOR(-): 504bp after exon 19
+      Intron of DAB1(-): 66Kb before exon 5
+      Intron of ERG(-): 12Kb after exon 1
+      IGR: 11Kb before KRTAP21-3(-)
+      Intron of ERG(-): 12Kb after exon 1
+      IGR: 4Kb after DLL4(+)
+      5'-UTR of DLC1(-): 8Kb before coding start
+      IGR: 45Kb before CLDN17(-)
+
+Patient: PR-7520  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 8
+  chain_size : 11 rearrangements
+  chromosomes: [2.0, 3.0, 4.0, 7.0, 8.0, 10.0, 21.0, 22.0]
+  genes at breakpoints:
+      IGR: 17Kb before PCBP3(+)
+      IGR: 290Kb before GRM7(+)
+      Intron of VPS8(+): 2Kb before exon 36
+      Intron of TMEM108(+): 6Kb before exon 4
+      Intron of VPS8(+): 2Kb before exon 36
+      Intron of ACPP(+): 2Kb after exon 5
+      5'-UTR of CNTN4(+): 24Kb before coding start
+      IGR: 487Kb after C3orf58(+)
+      IGR: 16Kb before NRXN1(-)
+      Intron of SCHIP1(+): 7Kb after exon 3
+      Intron of NPHP3(-): 268bp before exon 11
+      3'-UTR of CECR6(-): 255bp after coding stop
+      IGR: 17Kb before TMEM64(-)
+      Exon 11 of PCGF3(+)
+      Intron of PPP2R2C(-): 1Kb before exon 2
+      3'-UTR of PCGF3(+): 1bp after coding stop
+      Intron of TMPRSS2(-): 267bp before exon 4
+      IGR: 18Kb before TUBB8(-)
+      Intron of PDLIM1(-): 8Kb after exon 1
+      IGR: 47Kb before LPP(+)
+      Intron of KCP(-): 1Kb after exon 8
+      Intron of TMPRSS2(-): 5Kb before exon 2
+
+Patient: PR-STID0000000415  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 23Kb before exon 4
+      Intron of TMPRSS2(-): 4Kb after exon 1
+
+Patient: PR-STID0000002872  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 7Kb after exon 1
+      Intron of ERG(-): 53Kb before exon 4
+      IGR: 48Kb before KCNJ6(-)
+      Intron of TMPRSS2(-): 2Kb before exon 4
+      Intron of TMPRSS2(-): 2Kb after exon 3
+      Intron of TMPRSS2(-): 2Kb after exon 3
+

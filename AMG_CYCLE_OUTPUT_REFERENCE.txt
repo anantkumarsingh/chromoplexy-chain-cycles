@@ -1,0 +1,601 @@
+================================================================================
+AMG CYCLE STRUCTURE OUTPUT — COMPUTATION REFERENCE
+Baca-AMG Prostate Cancer Project
+Arsuaga-Vazquez Lab, UC Davis
+Mathematical framework: Sheth, Arsuaga, Sazdanovic 2026 — J. Phys. A 59:115601
+Script: scripts/baca/baca_aberration_clinical_analysis.py
+Function: compute_erg_cycle_structures()
+================================================================================
+
+
+================================================================================
+PART 1 — WHAT THE COMPUTATION IS AND IS NOT
+================================================================================
+
+PURPOSE
+-------
+For each of the 26 ERG-positive patients in Baca et al. 2013, the function
+extracts the ERG fusion chain (the set of rearrangement junctions connected to
+the TMPRSS2-ERG anchor), builds an Aberration Multigraph (AMG) from those
+junctions, and computes the cycle structure of that graph using Sheth 2026.
+
+The output has two distinct parts:
+
+  Part A — CYCLE STRUCTURE FROM ACTUAL DATA
+    The cycle structure computed by applying the AMG traversal to the actual
+    DNA rejoin junctions detected by whole-genome sequencing (the CSV rows).
+    The cycles themselves are NOT directly observed in sequencing — they are
+    a mathematical structure derived from the sequencing data.
+
+  Part B — COUNTERFACTUAL ENUMERATION (Tables A, B, C)
+    For each possible alternative rejoining of the same DSB endpoints, what
+    cycle structure would have resulted? This is purely hypothetical — only
+    one scenario (the actual data) happened in the tumor. The tables show
+    how common or rare the actual outcome is relative to all alternatives.
+
+These two parts answer different questions:
+  Actual data  → what cycle structure did this tumor actually produce?
+  Enumeration  → how probable was that structure among all possibilities?
+
+
+================================================================================
+PART 2 — STEP-BY-STEP COMPUTATION
+================================================================================
+
+The full computation runs in six steps. Each is described exactly below.
+
+--------------------------------------------------------------------------------
+STEP 1 — EXTRACT THE ERG FUSION CHAIN ROWS
+--------------------------------------------------------------------------------
+
+Function: _get_erg_chain_rows(patient_id, chrom_df, clinical_df)
+
+What it does:
+  Pulls a subset of the patient's rearrangement rows from the CSV file. Only
+  rows connected to the ERG/TMPRSS2 anchor are included.
+
+  Sub-step 1a — Find anchor rows:
+    Any row where the site annotation (Breakpoint 1 site or Breakpoint 2 site)
+    contains the text "ERG" or "TMPRSS2", or where the Fusion column contains
+    those strings. These rows directly involve the ERG or TMPRSS2 gene.
+
+  Sub-step 1b — Find chain chromosomes:
+    Collect all chromosome numbers that appear in the anchor rows (both BP1
+    and BP2 chromosomes). These define the chromosome set of the anchor.
+
+  Sub-step 1c — One-hop inter-chromosomal expansion:
+    From the full patient row set, take all rows with Class = "inter_chr" that
+    share at least one chromosome with the anchor chromosome set. These are the
+    inter-chromosomal rearrangements one hop away from the ERG anchor.
+
+  Sub-step 1d — Combine:
+    Anchor rows + chain inter-chr rows, deduplicated by row number. This is
+    the final chain row set.
+
+Output: n_rejoins rows (a DataFrame subset of the patient's CSV data).
+
+Key fact: n_rejoins is NOT the patient's total rearrangement count. It is only
+the ERG-connected subset. Most chromoplexy patients have many more rows
+genome-wide that are not included.
+
+Example — P05-1657:
+  1 anchor row (chr21 long_range, the TMPRSS2-ERG deletion).
+  No inter_chr rows share chr21 in this patient's chain.
+  n_rejoins = 1.
+
+Example — P08-492:
+  2 anchor rows (chr21 inversion and long_range).
+  4 inter_chr rows sharing chr21 (connecting chr1, chr14, chr15).
+  n_rejoins = 6.
+
+
+--------------------------------------------------------------------------------
+STEP 2 — BUILD DSB POSITIONS PER CHROMOSOME
+--------------------------------------------------------------------------------
+
+Function: _build_amg_nodes_and_edges() — first sub-step
+
+What it does:
+  Each chain row has two breakpoints (BP1 and BP2). Each breakpoint defines
+  one DSB position: a (chromosome, position) pair. Collect all such pairs
+  from all chain rows, deduplicate, and sort by genomic position within each
+  chromosome.
+
+  n_DSBs = n_rejoins x 2
+    (each row contributes 2 DSB positions; positions are assumed distinct)
+
+  b_i = number of DSB positions on chromosome i within the chain.
+
+Output: chr_to_dsb_pos — a dict mapping chromosome -> sorted list of positions.
+This gives the Theta configuration: Θ(k, (b_1, b_2, ..., b_k)).
+
+Example — P08-492:
+  Row 1:  BP1=(chr21, 39880575)  BP2=(chr21, 40028348)
+  Row 21: BP1=(chr21, 39880442)  BP2=(chr21, 42867043)
+  Row 37: BP1=(chr15, 40097486)  BP2=(chr21, 40028531)
+  Row 10: BP1=(chr14, 23001942)  BP2=(chr21, 26412380)
+  Row 45: BP1=(chr1,  24965034)  BP2=(chr21, 26413643)
+  Row 87: BP1=(chr1,  24964930)  BP2=(chr15, 40055207)
+
+  chr1  sorted DSBs: [24964930, 24965034]         b_1 = 2
+  chr14 sorted DSBs: [23001942]                   b_14 = 1
+  chr15 sorted DSBs: [40055207, 40097486]         b_15 = 2
+  chr21 sorted DSBs: [26412380, 26413643,
+                      39880442, 39880575,
+                      40028348, 40028531,
+                      42867043]                   b_21 = 7
+  n_DSBs = 6 x 2 = 12
+  Θ(4, (2, 1, 2, 7))
+
+
+--------------------------------------------------------------------------------
+STEP 3 — BUILD THE NODE SET
+--------------------------------------------------------------------------------
+
+Function: _build_amg_nodes_and_edges() — second sub-step
+
+What it does:
+  Every DSB position physically creates TWO endpoints: the right side of the
+  break (+) and the left side (-). Both are added to the node set, even if
+  only one strand appears in the CSV rows.
+
+  For each (chromosome, position) pair in chr_to_dsb_pos:
+    Add (chromosome, position, '+') to all_nodes
+    Add (chromosome, position, '-') to all_nodes
+
+  Total nodes = 2 x n_DSBs = 4 x n_rejoins
+
+WHY BOTH STRANDS:
+  The strand in the CSV tells you which side of the break was used in the
+  observed rejoin. The other side physically exists and participates in the
+  reference edge structure (see Step 4). Both must be in the node set to
+  correctly build the reference graph.
+
+  Nodes with no observed rearrangement partner (the "other strand" nodes) are
+  handled gracefully in the traversal — they are simply skipped as starting
+  points and become dead ends if reached via a reference hop.
+
+
+--------------------------------------------------------------------------------
+STEP 4 — BUILD REARRANGEMENT EDGES (rearr_adj)
+--------------------------------------------------------------------------------
+
+Function: _build_amg_nodes_and_edges() — third sub-step
+
+What it does:
+  For each chain row, extract the two breakpoint endpoints as (chr, pos, strand)
+  tuples and add them as a symmetric pair in the rearr_adj dictionary.
+
+  For a row with BP1=(chr_a, pos_a, strand_a) and BP2=(chr_b, pos_b, strand_b):
+    rearr_adj[(chr_a, pos_a, strand_a)] = (chr_b, pos_b, strand_b)
+    rearr_adj[(chr_b, pos_b, strand_b)] = (chr_a, pos_a, strand_a)
+
+  These are the ACTUAL observed rejoin connections. The strand in the CSV
+  directly determines which endpoint is the rearrangement endpoint of each DSB.
+
+  rearr_adj has exactly 2 x n_rejoins entries (2 per row, symmetric).
+
+Example — P08-492 Row 37 (chr15- / chr21+):
+  rearr_adj[(chr15, 40097486, '-')] = (chr21, 40028531, '+')
+  rearr_adj[(chr21, 40028531, '+')] = (chr15, 40097486, '-')
+
+
+--------------------------------------------------------------------------------
+STEP 5 — BUILD REFERENCE EDGES (ref_adj)
+--------------------------------------------------------------------------------
+
+Function: _build_amg_nodes_and_edges() — fourth sub-step
+
+What it does:
+  Reference edges represent the normal genome structure between adjacent DSBs
+  on the same chromosome. They are FIXED — they do not change between the
+  actual data computation and the counterfactual enumeration.
+
+  Rule: For consecutive DSB positions p_i < p_{i+1} on the same chromosome:
+    ref_adj[(chr, p_i, '+')] = (chr, p_{i+1}, '-')
+    ref_adj[(chr, p_{i+1}, '-')] = (chr, p_i, '+')   [symmetric]
+
+  The + endpoint of the earlier break connects to the - endpoint of the later
+  break. This represents the chromosome segment between the two breaks. The
+  connection is symmetric: you can traverse it in either direction.
+
+  Open ends (leftmost - and rightmost + of each chromosome):
+    ref_adj[(chr, p_first, '-')] = 'TELOMERE'
+    ref_adj[(chr, p_last,  '+')] = 'TELOMERE'
+
+  TELOMERE is a sentinel value meaning "this endpoint exits the chain."
+
+Example — P08-492, chr21 (7 DSBs sorted):
+  Positions: 26412380, 26413643, 39880442, 39880575, 40028348, 40028531, 42867043
+
+  ref_adj[(chr21, 26412380, '+')] = (chr21, 26413643, '-')
+  ref_adj[(chr21, 26413643, '-')] = (chr21, 26412380, '+')   [symmetric]
+  ref_adj[(chr21, 26413643, '+')] = (chr21, 39880442, '-')
+  ref_adj[(chr21, 39880442, '-')] = (chr21, 26413643, '+')
+  ... and so on for each consecutive pair ...
+  ref_adj[(chr21, 40028531, '+')] = (chr21, 42867043, '-')
+  ref_adj[(chr21, 42867043, '-')] = (chr21, 40028531, '+')
+  ref_adj[(chr21, 26412380, '-')] = 'TELOMERE'   [leftmost, no left neighbor]
+  ref_adj[(chr21, 42867043, '+')] = 'TELOMERE'   [rightmost, no right neighbor]
+
+
+--------------------------------------------------------------------------------
+STEP 6 — CYCLE TRAVERSAL (actual data)
+--------------------------------------------------------------------------------
+
+Function: _find_amg_cycles(all_nodes, rearr_adj, ref_adj)
+
+What it does:
+  Finds all closed cycles in the AMG built from the actual chain rows.
+  Uses the actual rearr_adj (fixed by the CSV data).
+
+  ALGORITHM:
+  For each node in all_nodes (sorted for deterministic order):
+    If the node has already been visited, skip it.
+    If the node is not in rearr_adj (no observed rearrangement partner), skip it
+    as a starting point (it may still be reached via a reference hop later).
+
+    Otherwise, start a traversal:
+      current_node = start_node
+      step_type = 'rearrangement'   [always start with rearrangement]
+      rearr_hops = 0
+
+      Loop until current_node has been visited before:
+        Mark current_node as visited.
+        Add current_node to path.
+
+        If step_type == 'rearrangement':
+          next_node = rearr_adj[current_node]
+          If no rearrangement partner exists: OPEN PATH, stop.
+          rearr_hops += 1
+          step_type = 'reference'
+
+        If step_type == 'reference':
+          next_node = ref_adj[current_node]
+          If next_node is 'TELOMERE' or missing: OPEN PATH, stop.
+          step_type = 'rearrangement'
+
+        current_node = next_node
+
+      If current_node == start_node AND rearr_hops > 0:
+        CYCLE FOUND. Cycle length = len(path) DSBs.
+      Else:
+        OPEN PATH.
+
+  Cycle length = len(path) = number of nodes visited before returning to start.
+  In Sheth's notation: Cn where n = number of DSBs in the cycle = len(path).
+  Note: len(path) = 2 x rearr_hops because the traversal alternates exactly
+  one rearrangement hop and one reference hop per node visited.
+
+CONCRETE EXAMPLE — P05-1657 (single chr21 deletion):
+  Chain row: chr21+ pos=40004715  ←→  chr21- pos=42873767
+
+  rearr_adj:
+    (chr21, 40004715, '+') → (chr21, 42873767, '-')
+    (chr21, 42873767, '-') → (chr21, 40004715, '+')
+
+  ref_adj (chr21 has exactly 2 DSBs: 40004715 < 42873767):
+    (chr21, 40004715, '+') → (chr21, 42873767, '-')   [next DSB to the right]
+    (chr21, 40004715, '-') → TELOMERE                 [leftmost DSB]
+    (chr21, 42873767, '+') → TELOMERE                 [rightmost DSB]
+    (chr21, 42873767, '-') → (chr21, 40004715, '+')   [previous DSB to the left]
+
+  Traversal starting at (chr21, 40004715, '+'):
+    Step 1: REARR → (chr21, 42873767, '-')    rearr_hops=1
+    Step 2: REF   → (chr21, 40004715, '+')    ← back to start!
+    CYCLE FOUND. len(path) = 2 → C2.
+
+  Note: the rearrangement edge and reference edge connect the exact same pair
+  of nodes. This is the correct result for a simple intrachromosomal deletion:
+  the deletion junction (rearrangement edge) and the deleted segment (reference
+  edge) form the two edges of a closed 2-node cycle.
+
+CONCRETE EXAMPLE — P07-4941 (C4 + C4):
+  Two separate traversals each close into a cycle:
+
+  Cycle 1 (chr4 ↔ chr17):
+    (chr4, 3238937, '+')  -[REARR]→ (chr17, 10073902, '-')
+    (chr17, 10073902, '-') -[REF ]→ (chr17, 10073535, '+')   [consecutive chr17]
+    (chr17, 10073535, '+') -[REARR]→ (chr4, 3239653, '-')
+    (chr4, 3239653, '-')  -[REF ]→  (chr4, 3238937, '+')    [consecutive chr4]
+    → back to start. 4 nodes visited = C4.
+
+  Cycle 2 (chr7 ↔ chr17):
+    (chr7, 2211726, '+')  -[REARR]→ (chr17, 45311259, '+')
+    (chr17, 45311259, '+') -[REF ]→ (chr17, 45782656, '-')   [consecutive chr17]
+    (chr17, 45782656, '-') -[REARR]→ (chr7, 2211753, '-')
+    (chr7, 2211753, '-')  -[REF ]→  (chr7, 2211726, '+')    [consecutive chr7]
+    → back to start. 4 nodes visited = C4.
+
+  Result: C4 + C4. All other traversals hit TELOMERE → open paths.
+
+
+--------------------------------------------------------------------------------
+STEP 7 — COUNTERFACTUAL ENUMERATION (Tables A, B, C)
+--------------------------------------------------------------------------------
+
+Function: _enumerate_cycle_structures()
+Sub-functions: _all_perfect_matchings(), _classify_matching(),
+               _cycle_struct_from_matching()
+
+Only runs when n_rejoins <= 6 (at most 10,395 matchings).
+
+What it does:
+  Takes the 2 x n_rejoins rearrangement endpoints from rearr_adj.keys() and
+  generates every possible way to pair them into n_rejoins pairs (matchings).
+  For each matching, runs the same cycle traversal from Step 6, using the
+  hypothetical matching instead of the actual rearr_adj.
+  Classifies each matching as ALL_INTER, ALL_INTRA, or MIXED.
+  Counts how many matchings produce each cycle structure per category.
+
+HOW MATCHINGS ARE GENERATED — _all_perfect_matchings(endpoints):
+  Recursive generator. Given a list of 2n endpoints:
+    Fix the first endpoint.
+    Pair it with each of the remaining (2n-1) endpoints (one at a time).
+    For each choice, recursively generate all matchings of the remaining (2n-2).
+    Yield each complete set of n pairs.
+
+  Total matchings = (2n-1)!! = (2n-1) x (2n-3) x ... x 3 x 1
+
+  This formula counts the number of ways to partition 2n elements into n pairs.
+  n is n_rejoins here (not n_DSBs). So total = (2 x n_rejoins - 1)!!
+
+  n_rejoins -> total matchings:
+    1  ->        1
+    2  ->        3
+    3  ->       15
+    4  ->      105
+    5  ->      945   (matches Sheth Section 7.1 for P05-1657's 10-endpoint chain)
+    6  ->   10,395
+
+HOW EACH MATCHING IS CLASSIFIED — _classify_matching(matching, endpoint_to_chr):
+  For each pair (u, v) in the matching:
+    Check if u and v are on the same chromosome.
+  ALL_INTER : every pair is on different chromosomes.
+  ALL_INTRA : every pair is on the same chromosome.
+  MIXED     : some pairs are inter, some are intra.
+
+  ALL_INTRA is impossible when any chromosome has an odd number of endpoints
+  in the rearrangement pool, because you cannot form a perfect matching within
+  a pool of odd size. When ALL_INTRA is impossible, Table B will always be
+  empty (0 matchings).
+
+HOW THE CYCLE STRUCTURE IS COMPUTED FOR EACH MATCHING:
+  Build a temporary rearr_adj from the matching:
+    For each pair (u, v): temp_rearr[u]=v and temp_rearr[v]=u.
+  Run _find_amg_cycles(all_nodes, temp_rearr, ref_adj).
+    (ref_adj is unchanged — the reference structure is always the same)
+  The resulting cycle list, sorted descending, is the cycle structure for this
+  matching.
+
+EXAMPLE — P05-1657 (n_rejoins=1, 2 endpoints, 1 matching):
+  Endpoints: (chr21, 40004715, '+') and (chr21, 42873767, '-')
+  Only 1 matching: pair them with each other (the actual data).
+  Cycle structure: C2. Category: ALL_INTRA.
+  Result: Table B shows C2 with count=1, 100%.
+
+EXAMPLE — P08-492 Cycle Structure C4 + C2:
+  One hypothetical matching pairs:
+    (chr1, 24964930, '+') with (chr1, 24965034, '-')   [intra chr1]
+    (chr15, 40097486, '-') with (chr21, 26412380, '+') [inter]
+    (chr21, 26413643, '-') with (chr15, 40055207, '+') [inter]
+    ... (other pairs for chr14 and chr21 endpoints) ...
+
+  Two traversals close into cycles:
+    Traversal 1: (chr1, 24964930, +) -REARR-> (chr1, 24965034, -)
+                                     -REF ->  (chr1, 24964930, +) [back]
+                 → C2
+
+    Traversal 2: (chr15, 40055207, +) -REARR-> (chr21, 26413643, -)
+                                      -REF ->  (chr21, 26412380, +)
+                                      -REARR-> (chr15, 40097486, -)
+                                      -REF ->  (chr15, 40055207, +) [back]
+                 → C4
+
+  Cycle structure for this matching: C4 + C2.
+  Category: MIXED (contains both intra and inter pairs).
+  This matching's count is added to structure_counts['MIXED'][(4, 2)].
+
+IMPORTANT — CYCLE STRUCTURES DO NOT ALWAYS SUM TO n_DSBs:
+  In Sheth's proper AMG (full genome), every DSB is in a cycle, so the sum of
+  all cycle lengths always equals n_DSBs. In our chain subsets, this is NOT
+  guaranteed. The reason is structural dead ends in the reference topology:
+
+  Dead end type 1 — TELOMERE:
+    A chromosome with only 1 DSB in the chain has both its reference endpoints
+    going to TELOMERE. Any traversal that reaches one of its rearrangement
+    endpoints via a rearrangement hop will immediately hit TELOMERE on the next
+    reference hop. This DSB can never be in a cycle.
+
+  Dead end type 2 — Reference lands on a non-rearrangement endpoint:
+    Some DSB positions have their reference neighbor pointing to the OPPOSITE
+    strand of an adjacent DSB. If that opposite strand is not a rearrangement
+    endpoint (not in rearr_adj), the traversal ends. This happens when
+    consecutive DSBs on the same chromosome have the same strand in the CSV
+    (both '+' or both '-') — the reference chain cannot bridge between them.
+
+  Consequence: n_DSBs in the chain includes DSBs that are structurally excluded
+  from cycles regardless of which matching is chosen. The sum of cycle lengths
+  in the enumeration is always <= n_DSBs, not equal to n_DSBs.
+
+  Example — P07-5037 (n_DSBs=10):
+    4 of the 10 rearrangement endpoints are dead ends:
+      (chr22, 39775508, '+')  → ref → TELOMERE
+      (chr21, 42856182, '+')  → ref → TELOMERE
+      (chr10, 78297423, '-')  → ref → (chr10, 51561072, '+') [not in rearr_adj]
+      (chr21, 42856015, '-')  → ref → (chr21, 42851037, '+') [not in rearr_adj]
+
+    Maximum DSBs that can ever be in cycles: 10 - 4 = 6.
+    This is why C6 is the largest structure in the Table C and cycle structures
+    sum to at most 6, not 10.
+
+
+================================================================================
+PART 3 — OUTPUT VARIABLES
+================================================================================
+
+HEADER BLOCK
+------------
+Patient         : Baca et al. patient ID.
+Θ(k,(b1,...bk)) : Chain configuration. k = chromosomes in chain.
+                  bi = DSBs on chromosome i within the chain (chain only,
+                  not genome-wide). Values in ascending chromosome order.
+n_rejoins       : CSV rows in the ERG chain (anchor + one-hop inter_chr).
+n_DSBs          : Total DSB positions = n_rejoins x 2.
+k_local         : Distinct chromosomes in chain = k in Θ.
+b_i             : Dict of chromosome → DSB count (chain only).
+Open paths      : Traversals that hit TELOMERE. Each represents a DSB whose
+                  rearrangement partner is outside the extracted chain.
+
+CYCLE STRUCTURE FROM ACTUAL DATA
+---------------------------------
+Result          : Cycle structure computed from actual sequencing-detected
+                  rejoins. Written as Cn + Cm + ... (descending).
+                  "none (all open paths)" = no closed cycles within chain.
+n_cycles        : Number of closed cycles found.
+rank            : n_DSBs - n_cycles (Theorem 25). N/A when n_cycles = 0.
+max rank        : n_DSBs - 1. Upper bound if chain were a proper AMG.
+
+SHETH THEORETICAL BOUNDS
+-------------------------
+These apply to a hypothetical proper AMG for the same Θ configuration. They
+do not account for the dead-end structure of the actual chain. Use them as
+reference points, not guarantees.
+
+Prop 4          : Cycle count range [1, min(max_bi, floor(n/2))].
+Thm 6           : Most probable cycle count ≈ log(n_DSBs).
+Thm 25          : rank = n_DSBs - n_cycles (same as rank above).
+Lem 14          : True if all b_i = 1 → only possible structure is C_{n_DSBs}.
+ALL_INTRA poss. : False if any chromosome has an odd endpoint count.
+                  Lists offending chromosomes when False.
+
+COUNTERFACTUAL ENUMERATION
+---------------------------
+Total pathways  : (2 x n_rejoins - 1)!! — all possible pairings of the
+                  2*n_rejoins rearrangement endpoints.
+ALL_INTER count : Matchings where every pair crosses chromosome boundaries.
+ALL_INTRA count : Matchings where every pair stays within one chromosome.
+MIXED count     : Matchings with a mix of inter- and intra-chromosomal pairs.
+
+Table columns (A = ALL_INTER, B = ALL_INTRA, C = MIXED):
+  Cycle structure : Cn + Cm + ... produced by matchings in that category.
+                    "(none)" means no cycles close in those matchings.
+  Count           : Number of matchings producing this cycle structure.
+  %               : Count / category_total × 100.
+  ← actual data  : Marks the cycle structure matching the actual sequencing
+                    data. All other rows are counterfactual.
+
+CROSS-PATIENT SUMMARY TABLE
+----------------------------
+Patient    : Patient ID.
+Type       : chromoplexy_embedded or simple_fusion (from prior classification).
+Θ          : Chain configuration.
+Observed   : Cycle structure from actual data.
+Paths      : Total counterfactual pathways, or ">10395" if n_rejoins > 6.
+Rank       : Theorem 25 rank, or N/A.
+
+
+================================================================================
+PART 4 — LIMITATIONS
+================================================================================
+
+1. THE CHAIN IS A SUBSET — CYCLES DO NOT SUM TO n_DSBs
+   The chain is extracted as anchor rows + one inter_chr hop. The resulting
+   reference topology always has dead ends (TELOMERE connections and
+   non-rearrangement-endpoint neighbors) for DSBs at the boundaries of the
+   chain. These dead-end DSBs can never be in a closed cycle regardless of
+   the matching. Therefore, the cycle structures in both the actual data
+   computation and the counterfactual enumeration sum to fewer than n_DSBs.
+   In Sheth's proper AMG (full genome), every cycle structure sums to exactly
+   n. This property does not hold for chain subsets.
+
+2. SHETH BOUNDS ASSUME A PROPER AMG
+   Proposition 4 (cycle count range) and Theorem 6 (probable cycle count) are
+   derived for complete proper AMGs. They are printed as reference points but
+   they do not apply cleanly to chain subsets with dead ends. The actual
+   achievable maximum cycle count in the chain is always less than or equal to
+   the Proposition 4 upper bound.
+
+3. n_DSBs OVERCOUNTS CYCLE-ELIGIBLE DSBs
+   n_DSBs = 2 x n_rejoins counts all DSB positions in the chain. But some of
+   those DSBs are structurally excluded from cycles by the reference topology.
+   The true number of cycle-eligible DSBs (those that CAN be in a closed cycle
+   given the chain's reference structure) is always <= n_DSBs and depends on
+   the specific chain topology.
+
+4. b_i UNDERCOUNTS GENOME-WIDE DSBs
+   The b_i values and Θ notation describe only the chain subgraph. Each
+   chromosome in the chain almost certainly has more DSBs elsewhere in the
+   genome. The Θ for the chain is not the same as the Θ for the full genome.
+
+5. OPEN PATHS ARE ALWAYS EXPECTED
+   Because the chain is a subset, some DSB endpoints will always lack an
+   observed rearrangement partner within the chain. These produce open paths.
+   Open paths are not errors — they represent connections to the rest of the
+   genome that are outside the extracted chain. Every chromoplexy patient will
+   have open paths.
+
+6. ENUMERATION THRESHOLD IS COMPUTATIONAL
+   Full counterfactual enumeration is only performed when n_rejoins <= 6
+   (at most 10,395 matchings). Larger chains show only the actual data cycle
+   structure and the Sheth theoretical bounds. The threshold is set by
+   computational cost, not by biology.
+
+7. ENUMERATION INCLUDES ALL PAIRINGS
+   The (2n-1)!! matchings include all mathematically valid endpoint pairings,
+   including biologically implausible ones (e.g., two endpoints far apart on
+   the same chromosome being rejoined). The tables show the full combinatorial
+   space without biological filtering.
+
+8. ALL_INTER = 0 IS COMMON
+   When chr21 contributes more than half the chain endpoints (common because
+   ERG and TMPRSS2 are both on chr21), it is geometrically impossible to find
+   an inter-chromosomal partner for every chr21 endpoint. ALL_INTER matchings
+   = 0 for most patients. This is a structural feature of the chain
+   construction, not a biological result.
+
+9. RANK IS N/A WHEN n_cycles = 0
+   The Theorem 25 rank formula (rank = n_DSBs - n_cycles) only applies to
+   proper AMGs with at least one closed cycle. When the chain produces no
+   closed cycles (all open paths), rank is printed as N/A.
+
+10. CLASSIFICATION IS INHERITED
+    The Type column (chromoplexy_embedded vs simple_fusion) comes from the
+    prior get_erg_chain_details_v2 analysis based on k_local > 2 AND
+    chain_size > 1. It is not recomputed by the cycle structure function.
+
+
+================================================================================
+PART 5 — STRAND AND EDGE CONVENTIONS
+================================================================================
+
+STRAND CONVENTION (from Baca et al. CSV):
+  + at a breakpoint = right side of the DSB (toward higher genomic coordinates)
+  - at a breakpoint = left side of the DSB  (toward lower genomic coordinates)
+
+  The strand in the CSV tells you which side of the break participated in the
+  observed rejoin. The opposite strand is the reference side of that DSB.
+
+REFERENCE EDGE RULE:
+  For consecutive DSB positions p_i < p_{i+1} on the same chromosome:
+    ref_adj[(chr, p_i, '+')] = (chr, p_{i+1}, '-')
+    [right end of earlier break → left end of later break]
+    [represents the normal chromosome segment between the two breaks]
+
+  Symmetric: ref_adj[(chr, p_{i+1}, '-')] = (chr, p_i, '+')
+
+  Open ends:
+    ref_adj[(chr, p_first, '-')] = 'TELOMERE'  [leftmost DSB on chr]
+    ref_adj[(chr, p_last,  '+')] = 'TELOMERE'  [rightmost DSB on chr]
+
+CYCLE NOTATION — SHETH 2026 CONVENTION:
+  Cn = a cycle containing n DSBs.
+  n = number of nodes visited in the traversal before returning to start.
+  n = 2 x (number of rearrangement edges in the cycle).
+  Example: C2 = simplest cycle, 1 rearrangement edge + 1 reference edge,
+           2 DSBs. Produced by a simple intrachromosomal deletion or inversion.
+
+
+================================================================================
+END OF REFERENCE
+================================================================================

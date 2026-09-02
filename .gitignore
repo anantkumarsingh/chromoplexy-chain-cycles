@@ -1,0 +1,24 @@
+# Virtual environment
+.venv/
+
+# Data and generated results (too large for plain git)
+data/
+results/
+
+# Copyrighted third-party paper (not for redistribution)
+baca-paper-punctuated-evolution-extended.pdf
+
+# Internal Claude Code project context/session files (not for public repo)
+CLAUDE.md
+CLAUDE_CONTEXT.md
+CONTEXT_LOG_*.md
+
+# IDE / local tool config
+.idea/
+.claude/settings.local.json
+.DS_Store
+.Rhistory
+
+# Python
+__pycache__/
+*.pyc

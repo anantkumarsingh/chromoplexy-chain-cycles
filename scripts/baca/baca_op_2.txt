@@ -1,0 +1,1560 @@
+ERG fusion patients: 26
+
+=== ERG FUSION PATIENTS — AMG COMPLEXITY ===
+           Individual   k  k_local  chain_size           fusion_type                      source Gleason Score Pathological stage
+9            P07-4941  22       12          31  chromoplexy_embedded             site_annotation           3+3               pT2c
+0              P01-28  15        8          22  chromoplexy_embedded             site_annotation           4+4               pT3a
+52            PR-7520  23        8          11  chromoplexy_embedded             site_annotation           NaN         Metastatic
+6            P05-3852  17        8          32  chromoplexy_embedded             site_annotation         4+3;5               pT3a
+39         PR-08-2153  15        7          10  chromoplexy_embedded             site_annotation           4+3               pT3a
+37         PR-07-4610  19        7          17  chromoplexy_embedded             site_annotation           3+4               pT3a
+34         PR-06-3199  15        6           8  chromoplexy_embedded             site_annotation           4+3               pT3a
+23             P09-37  17        5           6  chromoplexy_embedded             site_annotation           3+4               pT3b
+2            P03-2345  14        5          15  chromoplexy_embedded             site_annotation           3+4               pT2c
+17            P08-492  14        4           4  chromoplexy_embedded             site_annotation           3+4               pT2c
+1            P03-1426  23        4           5  chromoplexy_embedded             site_annotation           4+3               pT2c
+30         PR-04-1243  20        4           3  chromoplexy_embedded             site_annotation           3+4               pT3a
+48            PR-2621   8        4           6  chromoplexy_embedded             site_annotation           3+4               pT2c
+11           P07-5037  18        3           3  chromoplexy_embedded             site_annotation           4+3               pT3a
+22           P09-1042  16        3           7  chromoplexy_embedded             site_annotation           3+4               pT3a
+44          PR-09-146  19        2           1         simple_fusion             site_annotation           3+4               pT3a
+18            P08-501  16        2           1         simple_fusion             site_annotation           3+3               pT2c
+53  PR-STID0000000415  15        1           0         simple_fusion  site_annotation_intra_only           4+4               pT3a
+45         PR-09-3983  11        1           0         simple_fusion  site_annotation_intra_only           4+5               pT3b
+3            P04-1084  18        1           0         simple_fusion  site_annotation_intra_only           3+4               pT3a
+43          PR-08-784  14        1           0         simple_fusion  site_annotation_intra_only           4+3               pT2c
+40         PR-08-2455  14        1           0         simple_fusion  site_annotation_intra_only           4+4               pT3b
+14           P08-1042  15        1           0         simple_fusion  site_annotation_intra_only           3+4               pT3a
+4            P05-1657   5        1           0         simple_fusion  site_annotation_intra_only           3+4               pT2b
+5            P05-2709  10        1           0         simple_fusion  site_annotation_intra_only           3+5               pT3a
+55  PR-STID0000002872   7        1           0         simple_fusion  site_annotation_intra_only           3+4               pT3a
+
+=== FUSION TYPE COUNTS ===
+fusion_type
+chromoplexy_embedded    15
+simple_fusion           11
+Name: count, dtype: int64
+
+=== SOURCE BREAKDOWN ===
+source
+site_annotation               17
+site_annotation_intra_only     9
+Name: count, dtype: int64
+
+=== CHROMOPLEXY EMBEDDED — AMG SUMMARY ===
+n                  : 15
+median k_local     : 5.0
+median chain_size  : 8.0
+median total_DSBs  : 138.0
+median pct_inter   : 43.2%
+k_local > 2 count  : 15
+k_local > 3 count  : 13
+
+=== SIMPLE FUSION — AMG SUMMARY ===
+n                  : 11
+median k_local     : 1.0
+median chain_size  : 0.0
+median total_DSBs  : 68.0
+median pct_inter   : 28.6%
+
+=== ERG FUSION CHAIN DETAILS PER PATIENT ===
+
+Patient: P01-28  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 8
+  chain_size : 22 rearrangements
+  chromosomes: [1.0, 2.0, 3.0, 4.0, 9.0, 17.0, 19.0, 21.0]
+  genes at breakpoints:
+      Intron of CSMD2(-): 738bp after exon 45
+      Intron of PADI6(+): 648bp before exon 16
+      IGR: 23Kb before MFSD2A(+)
+      Intron of TMEM201(+): 27bp before exon 5
+      Intron of ZC3H11A(+): 4Kb before exon 7
+      IGR: 2Kb after UTP11L(+)
+      Intron of TMEM201(+): 1Kb after exon 4
+      Intron of CSMD2(-): 2Kb before exon 38
+      IGR: 1Kb after UTP11L(+)
+      IGR: 8Kb after MFSD2A(+)
+      Intron of RERE(-): 3Kb before exon 6
+      Intron of CHD5(-): 935bp before exon 12
+      IGR: 628bp before PLEKHA6(-)
+      Intron of PADI6(+): 717bp before exon 16
+      Intron of TMEM201(+): 41bp before exon 5
+      IGR: 27Kb before PLCH2(+)
+      Intron of YIPF1(-): 728bp before exon 7
+      Intron of FAF1(-): 5Kb after exon 7
+      5'-UTR of DAB1(-): 70Kb before coding start
+      IGR: 15Kb before PLCH2(+)
+      Intron of ARHGEF3(-): 35Kb before exon 3
+      Intron of YIPF1(-): 510bp before exon 7
+      Intron of ARHGEF3(-): 35Kb before exon 3
+      Intron of ERG(-): 10Kb after exon 1
+      5'-UTR of MIR548N(+): 158Kb before coding start
+      Intron of C17orf49(+): 9bp after exon 3
+      Intron of TMPRSS2(-): 340bp before exon 6
+      Exon 186 of TTN(-)
+      Intron of RNASEK(+): 175bp before exon 3
+      Intron of SURF4(-): 150bp before exon 6
+      Intron of UBXN7(-): 1Kb before exon 4
+      Intron of ABL1(+): 4Kb after exon 4
+      IGR: 614bp after CNTROB(+)
+      IGR: 51Kb before TEKT3(-)
+      IGR: 161Kb before DAPK1(+)
+      Intron of UBXN7(-): 1Kb before exon 4
+      Intron of RNASEK(+): 130bp before exon 3
+      Intron of TRPM4(+): 2Kb before exon 10
+      Intron of TMPRSS2(-): 476bp before exon 7
+      Intron of NUP35(+): 324bp after exon 7
+      IGR: 498Kb before PCDH7(+)
+      IGR: 7Kb before MEIS3(-)
+      Intron of TMPRSS2(-): 247bp before exon 4
+      Intron of NUP35(+): 333bp after exon 7
+
+Patient: P03-1426  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 4
+  chain_size : 5 rearrangements
+  chromosomes: [1.0, 7.0, 21.0, 22.0]
+  genes at breakpoints:
+      Intron of JAZF1(-): 17Kb after exon 1
+      Intron of JAZF1(-): 17Kb after exon 1
+      IGR: 5Kb after RSBN1L(+)
+      IGR: 23Kb before ZNF648(-)
+      IGR: 89Kb before IER5(+)
+      Intron of ERG(-): 65Kb before exon 4
+      IGR: 4Kb after BACE2(+)
+      Promoter of SLC25A18(+): 854bp from tx start
+      Intron of PPP1R9A(+): 1Kb after exon 5
+      Intron of PPP1R9A(+): 1Kb after exon 5
+
+Patient: P03-2345  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 5
+  chain_size : 15 rearrangements
+  chromosomes: [4.0, 5.0, 11.0, 20.0, 21.0]
+  genes at breakpoints:
+      IGR: 44Kb before GNPDA1(-)
+      IGR: 673Kb before ISL1(+)
+      Intron of ZCCHC9(+): 453bp after exon 2
+      IGR: 198Kb before SPOCK1(-)
+      Intron of AP3B1(-): 1Kb before exon 23
+      Intron of AP3B1(-): 23Kb before exon 23
+      IGR: 45Kb before GNPDA1(-)
+      Intron of PDE4D(-): 161Kb after exon 1
+      Intron of GNPDA1(-): 739bp after exon 2
+      Intron of SGCD(+): 79Kb before exon 4
+      IGR: 6Kb before PPP1R2P3(+)
+      IGR: 198Kb before SPOCK1(-)
+      IGR: 5Kb before KIF2A(+)
+      Exon 36 of PREX1(-)
+      IGR: 6Kb after CYP2U1(+)
+      IGR: 59Kb before SORL1(+)
+      IGR: 69Kb before SORL1(+)
+      IGR: 225Kb before BUD13(-)
+      Intron of TMPRSS2(-): 3Kb before exon 6
+      Intron of CASP4(-): 33bp after exon 5
+      IGR: 18Kb before PDGFD(-)
+      Intron of SORL1(+): 3Kb before exon 4
+      Intron of ARHGEF12(+): 1Kb after exon 15
+      Intron of DIXDC1(+): 109bp before exon 5
+      IGR: 42Kb before TMPRSS13(-)
+      Intron of ARHGEF12(+): 19Kb before exon 2
+      Intron of TMPRSS2(-): 3Kb before exon 6
+      IGR: 211Kb before BUD13(-)
+      IGR: 6Kb before DSCR10(+)
+      IGR: 467Kb before PIK3R1(+)
+
+Patient: P04-1084  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      3'-UTR of TMPRSS2(-): 1Kb after coding stop
+      Intron of ERG(-): 516bp after exon 1
+      Intron of ERG(-): 25Kb before exon 4
+      Intron of ERG(-): 25Kb before exon 4
+      Intron of TMPRSS2(-): 2Kb before exon 3
+      5'-UTR of ADARB1(+): 31Kb before coding start
+      3'-UTR of TMPRSS2(-): 826bp after coding stop
+      Intron of TMPRSS2(-): 2Kb before exon 3
+      Intron of ERG(-): 55Kb before exon 4
+      5'-UTR of ADARB1(+): 31Kb before coding start
+
+Patient: P05-1657  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      5'-UTR of ERG(-): 57Kb before coding start
+      Intron of TMPRSS2(-): 4Kb before exon 2
+
+Patient: P05-2709  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 13Kb after exon 1
+      Intron of TMPRSS2(-): 3Kb before exon 2
+
+Patient: P05-3852  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 8
+  chain_size : 32 rearrangements
+  chromosomes: [1.0, 3.0, 6.0, 9.0, 13.0, 18.0, 19.0, 21.0]
+  genes at breakpoints:
+      3'-UTR of SMAD4(+): 2Kb after coding stop
+      IGR: 15Kb before TMEM108(+)
+      IGR: 16Kb after UST(+)
+      5'-UTR of SLC14A2(+): 2Kb before coding start
+      IGR: 164Kb before CTTNBP2NL(+)
+      IGR: 4Kb after TFB1M(-)
+      IGR: 14Kb before TMEM108(+)
+      IGR: 29Kb after CHST9(-)
+      5'-UTR of SLC14A2(+): 2Kb before coding start
+      IGR: 29Kb before QKI(+)
+      Intron of UST(+): 1Kb before exon 4
+      3'-UTR of SFRS3(+): 2Kb after coding stop
+      IGR: 26Kb before C13orf31(+)
+      Intron of TNFSF11(+): 5Kb after exon 2
+      Intron of TIAM2(+): 379bp after exon 22
+      IGR: 5Kb before OR14J1(+)
+      IGR: 7Kb before C6orf118(-)
+      Intron of CD109(+): 2Kb after exon 14
+      Intron of EPSTI1(-): 7Kb before exon 7
+      IGR: 3Kb before MBD2(-)
+      Intron of TMEM108(+): 784bp before exon 5
+      IGR: 29Kb before QKI(+)
+      IGR: 33Kb after CHST9(-)
+      Intron of UST(+): 2Kb after exon 1
+      Intron of ACPP(+): 282bp after exon 9
+      3'-UTR of SFRS3(+): 2Kb after coding stop
+      IGR: 26Kb before C13orf31(+)
+      IGR: 290Kb before FRK(-)
+      IGR: 16Kb after RANBP9(-)
+      IGR: 64Kb before RBM16(+)
+      3'-UTR of GNL1(-): 3Kb after coding stop
+      Intron of SETBP1(+): 31Kb after exon 3
+      Intron of TMPRSS2(-): 5Kb after exon 1
+      IGR: 690Kb before COL12A1(-)
+      Intron of SLC14A2(+): 239bp after exon 2
+      IGR: 74Kb before NCRNA00111(+)
+      5'-UTR of DAAM2(+): 25Kb before coding start
+      Intron of TMPRSS2(-): 848bp before exon 4
+      Exon 8 of NHSL1(-)
+      Exon 4 of CYP2A6(-)
+      Intron of TMPRSS2(-): 2Kb after exon 3
+      IGR: 3Kb before MBD2(-)
+      Intron of SLC14A2(+): 1Kb after exon 4
+      5'-UTR of CYP2A6(-): 20bp before coding start
+      Intron of CHST9(-): 21Kb before exon 5
+      IGR: 523Kb before SYT4(-)
+      Intron of EPSTI1(-): 6Kb before exon 7
+      Intron of CHST9(-): 7Kb before exon 6
+      IGR: 6Kb after SMAD4(+)
+      IGR: 386Kb before DMRT2(+)
+      IGR: 29Kb after CHST9(-)
+      Intron of ERG(-): 16Kb after exon 3
+      Intron of MYO6(+): 674bp before exon 30
+      Intron of TMPRSS2(-): 313bp before exon 10
+      Intron of TMPRSS2(-): 2Kb after exon 3
+      Intron of SETBP1(+): 27Kb after exon 3
+      IGR: 31Kb after ATG5(-)
+      IGR: 93Kb before TCF4(-)
+      Intron of DOPEY2(+): 3Kb before exon 24
+      Intron of SMARCA2(+): 389bp after exon 2
+      Intron of TNFSF11(+): 6Kb after exon 2
+      IGR: 4Kb before DSG4(+)
+      IGR: 14Kb before DSCR10(+)
+      IGR: 73Kb before NCRNA00111(+)
+
+Patient: P07-4941  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 12
+  chain_size : 31 rearrangements
+  chromosomes: [1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 16.0, 17.0, 19.0, 20.0, 21.0]
+  genes at breakpoints:
+      IGR: 43Kb before IYD(+)
+      Intron of NOTCH2(-): 1Kb before exon 4
+      IGR: 42Kb before LOC146880(-)
+      3'-UTR of TRPM8(+): 5Kb after coding stop
+      Intron of MAD1L1(-): 23Kb before exon 11
+      Intron of SCN9A(-): 3Kb after exon 18
+      Intron of HTT(+): 519bp before exon 65
+      IGR: 66Kb before NACAP1(+)
+      Intron of SCN9A(-): 2Kb before exon 18
+      Promoter of TRA2B(-): 2Kb from tx start
+      IGR: 592Kb before DUSP26(-)
+      Intron of SCN9A(-): 10Kb before exon 18
+      Intron of SCN9A(-): 3Kb after exon 18
+      5'-UTR of ANKRD46(-): 14Kb before coding start
+      Intron of TRPM8(+): 132bp before exon 25
+      IGR: 6Kb after CPNE4(-)
+      Intron of HTT(+): 959bp after exon 64
+      5'-UTR of NCALD(-): 118Kb before coding start
+      Intron of NOTCH2(-): 1Kb before exon 4
+      Intron of MAD1L1(-): 23Kb before exon 11
+      Intron of RAD18(-): 3Kb after exon 2
+      IGR: 117Kb before ACPP(+)
+      IGR: 6Kb before GRIA2(+)
+      5'-UTR of ANKRD46(-): 9Kb before coding start
+      Intron of RAD18(-): 3Kb after exon 2
+      IGR: 14Kb after CPNE4(-)
+      Intron of SCN9A(-): 10Kb before exon 18
+      Intron of SCN9A(-): 2Kb before exon 18
+      IGR: 50Kb before LOC146880(-)
+      Intron of CSMD3(-): 3Kb after exon 3
+      Intron of COLEC10(+): 108bp after exon 2
+      IGR: 50Kb after FAM20A(-)
+      Promoter of HGSNAT(+): 3Kb from tx start
+      Intron of TMPRSS2(-): 1Kb after exon 5
+      Intron of NAALADL2(+): 11Kb after exon 9
+      Intron of TBKBP1(+): 3Kb before exon 7
+      Intron of DMPK(-): 243bp before exon 11
+      Intron of GAS7(-): 28Kb after exon 1
+      IGR: 20Kb after DSCAM(-)
+      Intron of DMPK(-): 229bp before exon 11
+      Intron of ITSN1(+): 286bp before exon 37
+      IGR: 454Kb before KCNJ2(+)
+      5'-UTR of ANKRD46(-): 9Kb before coding start
+      IGR: 20Kb before FLJ25363(+)
+      Intron of TMPRSS2(-): 209bp before exon 8
+      Intron of NAALADL2(+): 22Kb before exon 3
+      Intron of DSCAM(-): 255bp after exon 1
+      Intron of GAS7(-): 28Kb after exon 1
+      Intron of TMPRSS2(-): 622bp before exon 6
+      Intron of SGCZ(-): 36Kb after exon 1
+      IGR: 20Kb before ITGB3(+)
+      IGR: 2Kb after UTP23(+)
+      IGR: 150Kb before TNFRSF11B(-)
+      IGR: 50Kb after FAM20A(-)
+      Intron of TMEM50B(-): 930bp before exon 5
+      Intron of CSMD3(-): 11Kb before exon 4
+      IGR: 20Kb after DSCAM(-)
+      IGR: 1Kb before TMPRSS2(-)
+      3'-UTR of KLKP1(-): 11Kb after coding stop
+      IGR: 5Kb after EYA2(+)
+      IGR: 5Kb before TMCO7(+)
+      Promoter of CEACAM8(-): 3Kb from tx start
+
+Patient: P07-5037  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 3
+  chain_size : 3 rearrangements
+  chromosomes: [10.0, 21.0, 22.0]
+  genes at breakpoints:
+      Intron of MSMB(+): 90bp before exon 2
+      Intron of MSMB(+): 1Kb before exon 4
+      Intron of C10orf11(+): 20Kb before exon 6
+      Intron of ERG(-): 61Kb before exon 4
+      Intron of TMPRSS2(-): 52bp after exon 7
+      Intron of SYNGR1(+): 2Kb before exon 4
+
+Patient: P08-1042  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 2Kb after exon 1
+      Intron of TMPRSS2(-): 4Kb after exon 1
+
+Patient: P08-492  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 4
+  chain_size : 4 rearrangements
+  chromosomes: [1.0, 14.0, 15.0, 21.0]
+  genes at breakpoints:
+      IGR: 32Kb before DAD1(-)
+      Intron of GPR176(-): 2Kb after exon 2
+      IGR: 5Kb before SRRM1(+)
+      IGR: 5Kb before SRRM1(+)
+      IGR: 346Kb before NCRNA00158(-)
+      5'-UTR of ERG(-): 81Kb before coding start
+      IGR: 344Kb before NCRNA00158(-)
+      Intron of FSIP1(-): 823bp after exon 5
+
+Patient: P08-501  [simple_fusion]  source=site_annotation
+  k_local    : 2
+  chain_size : 1 rearrangements
+  chromosomes: [1.0, 21.0]
+  genes at breakpoints:
+      Intron of ABL2(-): 41Kb before exon 2
+      IGR: 15Kb before S100B(-)
+
+Patient: P09-1042  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 3
+  chain_size : 7 rearrangements
+  chromosomes: [13.0, 18.0, 21.0]
+  genes at breakpoints:
+      Intron of SMCHD1(+): 1Kb after exon 3
+      Intron of SMCHD1(+): 850bp after exon 5
+      Intron of EFHA1(-): 11Kb after exon 1
+      Intron of ENOSF1(-): 824bp before exon 2
+      Intron of EFHA1(-): 16Kb before exon 2
+      Intron of EFHA1(-): 11Kb after exon 1
+      Promoter of C1QTNF9B(-): 576bp from tx start
+      5'-UTR of MX2(+): 8Kb before coding start
+      5'-UTR of MX2(+): 3Kb before coding start
+      5'-UTR of ERG(-): 23Kb before coding start
+      Intron of MX2(+): 3Kb after exon 5
+      Intron of TMPRSS2(-): 989bp before exon 8
+      Intron of ITSN1(+): 2Kb before exon 17
+      Intron of SMCHD1(+): 5Kb after exon 5
+
+Patient: P09-37  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 5
+  chain_size : 6 rearrangements
+  chromosomes: [1.0, 6.0, 10.0, 12.0, 16.0]
+  genes at breakpoints:
+      IGR: 100Kb before SUPT3H(-)
+      Intron of FAF1(-): 45Kb before exon 2
+      Intron of SUPT3H(-): 58Kb after exon 4
+      Intron of RTKN2(-): 6Kb after exon 6
+      IGR: 1Mb before XPNPEP1(-)
+      Intron of RTKN2(-): 6Kb after exon 6
+      Intron of PTEN(+): 7Kb after exon 5
+      IGR: 181Kb before RNLS(-)
+      Intron of RNLS(-): 3Kb after exon 5
+      Intron of FTO(+): 29Kb before exon 2
+      IGR: 435Kb before MED13L(-)
+      IGR: 8Kb before TMEM114(-)
+
+Patient: PR-04-1243  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 4
+  chain_size : 3 rearrangements
+  chromosomes: [4.0, 7.0, 12.0, 21.0]
+  genes at breakpoints:
+      Intron of DGKB(-): 11Kb after exon 24
+      5'-UTR of FAM190A(+): 178Kb before coding start
+      IGR: 62Kb before PAH(-)
+      IGR: 330Kb before MIR802(+)
+      IGR: 27Kb before RUNX1(-)
+      IGR: 278Kb before MIR802(+)
+
+Patient: PR-06-3199  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 6
+  chain_size : 8 rearrangements
+  chromosomes: [1.0, 7.0, 8.0, 10.0, 12.0, 21.0]
+  genes at breakpoints:
+      5'-UTR of SLC45A3(-): 4Kb before coding start
+      IGR: 5Kb before JUN(-)
+      IGR: 5Kb before JUN(-)
+      IGR: 1Mb before PRMT6(+)
+      IGR: 1Mb before PRMT6(+)
+      Intron of AKR1E2(+): 58bp before exon 2
+      Intron of ACCN3(+): 118bp before exon 7
+      IGR: 1Mb before PRMT6(+)
+      Intron of ERG(-): 12Kb after exon 1
+      Intron of KIAA1429(-): 3Kb before exon 17
+      IGR: 72Kb before NECAB1(+)
+      IGR: 5Kb before PEBP1(+)
+      Intron of VSIG10(-): 295bp after exon 1
+      Intron of ERG(-): 12Kb after exon 1
+      IGR: 46Kb after AKR1C4(+)
+      Intron of VSIG10(-): 649bp after exon 1
+
+Patient: PR-07-4610  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 7
+  chain_size : 17 rearrangements
+  chromosomes: [3.0, 5.0, 6.0, 10.0, 13.0, 21.0, 22.0]
+  genes at breakpoints:
+      Intron of EAF2(+): 3Kb before exon 3
+      Intron of OSBPL10(-): 7Kb before exon 2
+      Intron of EAF2(+): 4Kb before exon 3
+      5'-UTR of GOLGB1(-): 671bp before coding start
+      Intron of TULP4(+): 9Kb after exon 1
+      Intron of CAMK2A(-): 2Kb after exon 13
+      Promoter of GOLGB1(-): 3Kb from tx start
+      IGR: 41Kb after MINPP1(+)
+      IGR: 226bp before MYLK(-)
+      Intron of EAF2(+): 4Kb after exon 1
+      Intron of PCCA(+): 9Kb before exon 7
+      IGR: 33bp before MYLK(-)
+      IGR: 247Kb before PPAPDC1A(+)
+      IGR: 135Kb before FGFR2(-)
+      Intron of OSBPL10(-): 7Kb before exon 2
+      Intron of PCCA(+): 9Kb before exon 7
+      Promoter of FGFR2(-): 189bp from tx start
+      Intron of CUBN(-): 193bp before exon 30
+      Intron of CUBN(-): 6Kb before exon 29
+      IGR: 53Kb before ADRA2A(+)
+      IGR: 145Kb before HABP2(+)
+      Intron of C10orf11(+): 111Kb after exon 4
+      Intron of CCDC109A(+): 53Kb before exon 2
+      IGR: 260Kb before PPAPDC1A(+)
+      IGR: 22Kb before XBP1(-)
+      Intron of RNLS(-): 73Kb after exon 4
+      Intron of RNLS(-): 47Kb after exon 4
+      Intron of TMPRSS2(-): 2Kb before exon 6
+      IGR: 17Kb before DDIT4(+)
+      IGR: 38Kb before CSF2RB(+)
+      IGR: 37Kb before C22orf33(-)
+      IGR: 58Kb before PAPSS2(+)
+      Intron of TMPRSS2(-): 1Kb before exon 3
+      IGR: 38Kb before C22orf33(-)
+
+Patient: PR-08-2153  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 7
+  chain_size : 10 rearrangements
+  chromosomes: [8.0, 10.0, 13.0, 14.0, 16.0, 21.0, 23.0]
+  genes at breakpoints:
+      IGR: 87Kb before CNTNAP4(+)
+      IGR: 5Kb after PCDH17(+)
+      IGR: 72Kb before CNTNAP4(+)
+      Intron of C10orf26(+): 25Kb before exon 2
+      Intron of ZFHX3(-): 16Kb before exon 4
+      Intron of ZFHX3(-): 16Kb before exon 4
+      5'-UTR of SGK196(+): 8Kb before coding start
+      3'-UTR of FLJ31306(-): 4Kb after coding stop
+      IGR: 170Kb before CDH5(+)
+      IGR: 8Kb before HUNK(+)
+      IGR: 24Kb after TMPRSS15(-)
+      Intron of TMPRSS15(-): 5Kb before exon 22
+      Intron of TMPRSS15(-): 334bp after exon 16
+      Intron of TMPRSS15(-): 5Kb before exon 22
+      IGR: 29Kb after TMPRSS15(-)
+      Intron of TMPRSS15(-): 4Kb after exon 10
+      Intron of TMPRSS15(-): 360bp after exon 16
+      IGR: 78Kb before NCRNA00111(+)
+      Intron of TMPRSS15(-): 3Kb after exon 13
+      IGR: 49Kb before VCX3A(-)
+
+Patient: PR-08-2455  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 27Kb after exon 3
+      Intron of TMPRSS2(-): 803bp before exon 3
+
+Patient: PR-08-784  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 55Kb after exon 3
+      Intron of TMPRSS2(-): 4Kb after exon 1
+
+Patient: PR-09-146  [simple_fusion]  source=site_annotation
+  k_local    : 2
+  chain_size : 1 rearrangements
+  chromosomes: [2.0, 21.0]
+  genes at breakpoints:
+      5'-UTR of GTF3C2(-): 12Kb before coding start
+      Exon 10 of DIP2A(+)
+
+Patient: PR-09-3983  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 58Kb before exon 4
+      Intron of TMPRSS2(-): 1Kb before exon 2
+
+Patient: PR-2621  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 4
+  chain_size : 6 rearrangements
+  chromosomes: [1.0, 8.0, 15.0, 21.0]
+  genes at breakpoints:
+      5'-UTR of SLC45A3(-): 9Kb before coding start
+      Intron of DAB1(-): 63Kb before exon 5
+      IGR: 550Kb before PPAP2B(-)
+      Intron of TNFRSF8(+): 3Kb after exon 3
+      Intron of MTOR(-): 504bp after exon 19
+      Intron of DAB1(-): 66Kb before exon 5
+      Intron of ERG(-): 12Kb after exon 1
+      IGR: 11Kb before KRTAP21-3(-)
+      Intron of ERG(-): 12Kb after exon 1
+      IGR: 4Kb after DLL4(+)
+      5'-UTR of DLC1(-): 8Kb before coding start
+      IGR: 45Kb before CLDN17(-)
+
+Patient: PR-7520  [chromoplexy_embedded]  source=site_annotation
+  k_local    : 8
+  chain_size : 11 rearrangements
+  chromosomes: [2.0, 3.0, 4.0, 7.0, 8.0, 10.0, 21.0, 22.0]
+  genes at breakpoints:
+      IGR: 17Kb before PCBP3(+)
+      IGR: 290Kb before GRM7(+)
+      Intron of VPS8(+): 2Kb before exon 36
+      Intron of TMEM108(+): 6Kb before exon 4
+      Intron of VPS8(+): 2Kb before exon 36
+      Intron of ACPP(+): 2Kb after exon 5
+      5'-UTR of CNTN4(+): 24Kb before coding start
+      IGR: 487Kb after C3orf58(+)
+      IGR: 16Kb before NRXN1(-)
+      Intron of SCHIP1(+): 7Kb after exon 3
+      Intron of NPHP3(-): 268bp before exon 11
+      3'-UTR of CECR6(-): 255bp after coding stop
+      IGR: 17Kb before TMEM64(-)
+      Exon 11 of PCGF3(+)
+      Intron of PPP2R2C(-): 1Kb before exon 2
+      3'-UTR of PCGF3(+): 1bp after coding stop
+      Intron of TMPRSS2(-): 267bp before exon 4
+      IGR: 18Kb before TUBB8(-)
+      Intron of PDLIM1(-): 8Kb after exon 1
+      IGR: 47Kb before LPP(+)
+      Intron of KCP(-): 1Kb after exon 8
+      Intron of TMPRSS2(-): 5Kb before exon 2
+
+Patient: PR-STID0000000415  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 23Kb before exon 4
+      Intron of TMPRSS2(-): 4Kb after exon 1
+
+Patient: PR-STID0000002872  [simple_fusion]  source=site_annotation_intra_only
+  k_local    : 1
+  chain_size : 0 rearrangements
+  chromosomes: [21.0]
+  genes at breakpoints:
+      Intron of ERG(-): 7Kb after exon 1
+      Intron of ERG(-): 53Kb before exon 4
+      IGR: 48Kb before KCNJ6(-)
+      Intron of TMPRSS2(-): 2Kb before exon 4
+      Intron of TMPRSS2(-): 2Kb after exon 3
+      Intron of TMPRSS2(-): 2Kb after exon 3
+
+
+###################################################################
+# AMG CYCLE STRUCTURES — Sheth 2026 Framework
+# Enumeration threshold: n_rejoins <= 6  ((2n-1)!! <= 10395)
+###################################################################
+
+===================================================================
+  Patient : P07-4941
+  Θ(12, (2, 8, 9, 3, 1, 2, 13, 1, 9, 4, 1, 15))
+  n_rejoins=34  n_DSBs=68  k_local=12
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 2, 2.0: 8, 3.0: 9, 4.0: 3, 6.0: 1, 7.0: 2, 8.0: 13, 16.0: 1, 17.0: 9, 19.0: 4, 20.0: 1, 21.0: 15}
+  Open paths (DSBs whose rearr. partner is outside chain) : 18
+
+  OBSERVED CYCLE STRUCTURE : C4 + C4
+  n_cycles=2  rank=66
+  (max rank in proper AMG = n-1 = 67)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 15]
+    Thm 6   — probable cycles ≈ log(n) = log(68) ≈ 4.22 → 4
+    Thm 25  — rank(observed) = 66
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr3 (n=9, odd), chr4 (n=3, odd), chr6 (n=1, odd), chr8 (n=13, odd), chr16 (n=1, odd), chr17 (n=9, odd), chr20 (n=1, odd), chr21 (n=15, odd)
+
+  Chain has 34 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : P01-28
+  Θ(8, (21, 4, 4, 1, 3, 5, 2, 6))
+  n_rejoins=23  n_DSBs=46  k_local=8
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 21, 2.0: 4, 3.0: 4, 4.0: 1, 9.0: 3, 17.0: 5, 19.0: 2, 21.0: 6}
+  Open paths (DSBs whose rearr. partner is outside chain) : 11
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 21]
+    Thm 6   — probable cycles ≈ log(n) = log(46) ≈ 3.83 → 4
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr1 (n=21, odd), chr4 (n=1, odd), chr9 (n=3, odd), chr17 (n=5, odd)
+
+  Chain has 23 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : PR-7520
+  Θ(8, (1, 10, 3, 1, 1, 2, 5, 1))
+  n_rejoins=12  n_DSBs=24  k_local=8
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {2.0: 1, 3.0: 10, 4.0: 3, 7.0: 1, 8.0: 1, 10.0: 2, 21.0: 5, 22.0: 1}
+  Open paths (DSBs whose rearr. partner is outside chain) : 10
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 10]
+    Thm 6   — probable cycles ≈ log(n) = log(24) ≈ 3.18 → 3
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr2 (n=1, odd), chr4 (n=3, odd), chr7 (n=1, odd), chr8 (n=1, odd), chr21 (n=5, odd), chr22 (n=1, odd)
+
+  Chain has 12 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : P05-3852
+  Θ(8, (1, 4, 21, 2, 6, 18, 2, 12))
+  n_rejoins=33  n_DSBs=66  k_local=8
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 1, 3.0: 4, 6.0: 21, 9.0: 2, 13.0: 6, 18.0: 18, 19.0: 2, 21.0: 12}
+  Open paths (DSBs whose rearr. partner is outside chain) : 13
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 21]
+    Thm 6   — probable cycles ≈ log(n) = log(66) ≈ 4.19 → 4
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr1 (n=1, odd), chr6 (n=21, odd)
+
+  Chain has 33 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : PR-08-2153
+  Θ(7, (1, 1, 1, 1, 5, 18, 1))
+  n_rejoins=14  n_DSBs=28  k_local=7
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {8.0: 1, 10.0: 1, 13.0: 1, 14.0: 1, 16.0: 5, 21.0: 18, 23.0: 1}
+  Open paths (DSBs whose rearr. partner is outside chain) : 6
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 14]
+    Thm 6   — probable cycles ≈ log(n) = log(28) ≈ 3.33 → 3
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr8 (n=1, odd), chr10 (n=1, odd), chr13 (n=1, odd), chr14 (n=1, odd), chr16 (n=5, odd), chr23 (n=1, odd)
+
+  Chain has 14 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : PR-07-4610
+  Θ(7, (9, 1, 1, 17, 2, 10, 4))
+  n_rejoins=22  n_DSBs=44  k_local=7
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {3.0: 9, 5.0: 1, 6.0: 1, 10.0: 17, 13.0: 2, 21.0: 10, 22.0: 4}
+  Open paths (DSBs whose rearr. partner is outside chain) : 13
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 17]
+    Thm 6   — probable cycles ≈ log(n) = log(44) ≈ 3.78 → 4
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr3 (n=9, odd), chr5 (n=1, odd), chr6 (n=1, odd), chr10 (n=17, odd)
+
+  Chain has 22 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : PR-06-3199
+  Θ(6, (6, 1, 2, 2, 3, 2))
+  n_rejoins=8  n_DSBs=16  k_local=6
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 6, 7.0: 1, 8.0: 2, 10.0: 2, 12.0: 3, 21.0: 2}
+  Open paths (DSBs whose rearr. partner is outside chain) : 7
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 6]
+    Thm 6   — probable cycles ≈ log(n) = log(16) ≈ 2.77 → 3
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr7 (n=1, odd), chr12 (n=3, odd)
+
+  Chain has 8 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : P09-37
+  Θ(6, (1, 2, 8, 1, 2, 8))
+  n_rejoins=11  n_DSBs=22  k_local=6
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 1, 6.0: 2, 10.0: 8, 12.0: 1, 16.0: 2, 21.0: 8}
+  Open paths (DSBs whose rearr. partner is outside chain) : 7
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=21
+  (max rank in proper AMG = n-1 = 21)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 8]
+    Thm 6   — probable cycles ≈ log(n) = log(22) ≈ 3.09 → 3
+    Thm 25  — rank(observed) = 21
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr1 (n=1, odd), chr12 (n=1, odd)
+
+  Chain has 11 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : P03-2345
+  Θ(5, (1, 14, 11, 1, 7))
+  n_rejoins=17  n_DSBs=34  k_local=5
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {4.0: 1, 5.0: 14, 11.0: 11, 20.0: 1, 21.0: 7}
+  Open paths (DSBs whose rearr. partner is outside chain) : 7
+
+  OBSERVED CYCLE STRUCTURE : C4 + C4
+  n_cycles=2  rank=32
+  (max rank in proper AMG = n-1 = 33)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 14]
+    Thm 6   — probable cycles ≈ log(n) = log(34) ≈ 3.53 → 4
+    Thm 25  — rank(observed) = 32
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr4 (n=1, odd), chr11 (n=11, odd), chr20 (n=1, odd), chr21 (n=7, odd)
+
+  Chain has 17 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : P08-492
+  Θ(4, (2, 1, 2, 7))
+  n_rejoins=6  n_DSBs=12  k_local=4
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 2, 14.0: 1, 15.0: 2, 21.0: 7}
+  Open paths (DSBs whose rearr. partner is outside chain) : 2
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 6]
+    Thm 6   — probable cycles ≈ log(n) = log(12) ≈ 2.48 → 2
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr14 (n=1, odd), chr21 (n=7, odd)
+
+  TOTAL PATHWAYS : 10395  (ALL_INTER=0, ALL_INTRA=0, MIXED=10395)
+
+  ── TABLE A : ALL_INTER matchings (0 / 10395) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (0 / 10395) ──
+  (structurally impossible — see odd-count chromosomes above)
+
+  ── TABLE C : MIXED matchings (10395 / 10395) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)        3840    36.9%  ← observed
+  C2                              1920    18.5%
+  C4                               960     9.2%
+  C6                               640     6.2%
+  C2 + C2                          480     4.6%
+  C4 + C2                          480     4.6%
+  C8                               480     4.6%
+  C10                              384     3.7%
+  C6 + C2                          320     3.1%
+  C8 + C2                          240     2.3%
+  C6 + C4                          160     1.5%
+  C4 + C4                          120     1.2%
+  C4 + C2 + C2                     120     1.2%
+  C2 + C2 + C2                      80     0.8%
+  C6 + C2 + C2                      80     0.8%
+  C4 + C4 + C2                      60     0.6%
+  C4 + C2 + C2 + C2                 20     0.2%
+  C2 + C2 + C2 + C2                 10     0.1%
+  C2 + C2 + C2 + C2 + C2             1     0.0%
+  ──────────────────────────────────────────────
+  Total                          10395   100.0%
+===================================================================
+
+===================================================================
+  Patient : P03-1426
+  Θ(4, (2, 5, 4, 1))
+  n_rejoins=6  n_DSBs=12  k_local=4
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 2, 7.0: 5, 21.0: 4, 22.0: 1}
+  Open paths (DSBs whose rearr. partner is outside chain) : 3
+
+  OBSERVED CYCLE STRUCTURE : C4
+  n_cycles=1  rank=11
+  (max rank in proper AMG = n-1 = 11)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 5]
+    Thm 6   — probable cycles ≈ log(n) = log(12) ≈ 2.48 → 2
+    Thm 25  — rank(observed) = 11
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr7 (n=5, odd), chr22 (n=1, odd)
+
+  TOTAL PATHWAYS : 10395  (ALL_INTER=1680, ALL_INTRA=0, MIXED=8715)
+
+  ── TABLE A : ALL_INTER matchings (1680 / 10395) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)        1280    76.2%
+  C4                               256    15.2%  ← observed
+  C6                                96     5.7%
+  C8                                32     1.9%
+  C4 + C4                           16     1.0%
+  ──────────────────────────────────────────────
+  Total                           1680   100.0%
+
+  ── TABLE B : ALL_INTRA matchings (0 / 10395) ──
+  (structurally impossible — see odd-count chromosomes above)
+
+  ── TABLE C : MIXED matchings (8715 / 10395) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)        4480    51.4%
+  C2                              2304    26.4%
+  C4                               608     7.0%  ← observed
+  C2 + C2                          432     5.0%
+  C4 + C2                          288     3.3%
+  C6                               288     3.3%
+  C8                               112     1.3%
+  C6 + C2                           96     1.1%
+  C2 + C2 + C2                      48     0.6%
+  C4 + C2 + C2                      36     0.4%
+  C4 + C4                           20     0.2%
+  C2 + C2 + C2 + C2                  3     0.0%
+  ──────────────────────────────────────────────
+  Total                           8715   100.0%
+===================================================================
+
+===================================================================
+  Patient : PR-04-1243
+  Θ(4, (1, 1, 1, 5))
+  n_rejoins=4  n_DSBs=8  k_local=4
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {4.0: 1, 7.0: 1, 12.0: 1, 21.0: 5}
+  Open paths (DSBs whose rearr. partner is outside chain) : 2
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=7
+  (max rank in proper AMG = n-1 = 7)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 4]
+    Thm 6   — probable cycles ≈ log(n) = log(8) ≈ 2.08 → 2
+    Thm 25  — rank(observed) = 7
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr4 (n=1, odd), chr7 (n=1, odd), chr12 (n=1, odd), chr21 (n=5, odd)
+
+  TOTAL PATHWAYS : 105  (ALL_INTER=0, ALL_INTRA=0, MIXED=105)
+
+  ── TABLE A : ALL_INTER matchings (0 / 105) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (0 / 105) ──
+  (structurally impossible — see odd-count chromosomes above)
+
+  ── TABLE C : MIXED matchings (105 / 105) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)          72    68.6%
+  C2                                24    22.9%  ← observed
+  C4                                 6     5.7%
+  C2 + C2                            3     2.9%
+  ──────────────────────────────────────────────
+  Total                            105   100.0%
+===================================================================
+
+===================================================================
+  Patient : PR-2621
+  Θ(4, (6, 1, 1, 4))
+  n_rejoins=6  n_DSBs=12  k_local=4
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 6, 8.0: 1, 15.0: 1, 21.0: 4}
+  Open paths (DSBs whose rearr. partner is outside chain) : 3
+
+  OBSERVED CYCLE STRUCTURE : C4
+  n_cycles=1  rank=11
+  (max rank in proper AMG = n-1 = 11)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 6]
+    Thm 6   — probable cycles ≈ log(n) = log(12) ≈ 2.48 → 2
+    Thm 25  — rank(observed) = 11
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr8 (n=1, odd), chr15 (n=1, odd)
+
+  TOTAL PATHWAYS : 10395  (ALL_INTER=720, ALL_INTRA=0, MIXED=9675)
+
+  ── TABLE A : ALL_INTER matchings (720 / 10395) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)         512    71.1%
+  C4                               160    22.2%  ← observed
+  C8                                32     4.4%
+  C4 + C4                           16     2.2%
+  ──────────────────────────────────────────────
+  Total                            720   100.0%
+
+  ── TABLE B : ALL_INTRA matchings (0 / 10395) ──
+  (structurally impossible — see odd-count chromosomes above)
+
+  ── TABLE C : MIXED matchings (9675 / 10395) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)        5248    54.2%
+  C2                              2304    23.8%
+  C4                               704     7.3%  ← observed
+  C2 + C2                          432     4.5%
+  C6                               384     4.0%
+  C4 + C2                          288     3.0%
+  C8                               112     1.2%
+  C6 + C2                           96     1.0%
+  C2 + C2 + C2                      48     0.5%
+  C4 + C2 + C2                      36     0.4%
+  C4 + C4                           20     0.2%
+  C2 + C2 + C2 + C2                  3     0.0%
+  ──────────────────────────────────────────────
+  Total                           9675   100.0%
+===================================================================
+
+===================================================================
+  Patient : P07-5037
+  Θ(3, (3, 6, 1))
+  n_rejoins=5  n_DSBs=10  k_local=3
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {10.0: 3, 21.0: 6, 22.0: 1}
+  Open paths (DSBs whose rearr. partner is outside chain) : 3
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 5]
+    Thm 6   — probable cycles ≈ log(n) = log(10) ≈ 2.30 → 2
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr10 (n=3, odd), chr22 (n=1, odd)
+
+  TOTAL PATHWAYS : 945  (ALL_INTER=0, ALL_INTRA=0, MIXED=945)
+
+  ── TABLE A : ALL_INTER matchings (0 / 945) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (0 / 945) ──
+  (structurally impossible — see odd-count chromosomes above)
+
+  ── TABLE C : MIXED matchings (945 / 945) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)         576    61.0%  ← observed
+  C2                               216    22.9%
+  C4                                72     7.6%
+  C2 + C2                           36     3.8%
+  C6                                24     2.5%
+  C4 + C2                           18     1.9%
+  C2 + C2 + C2                       3     0.3%
+  ──────────────────────────────────────────────
+  Total                            945   100.0%
+===================================================================
+
+===================================================================
+  Patient : P09-1042
+  Θ(3, (4, 4, 14))
+  n_rejoins=11  n_DSBs=22  k_local=3
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {13.0: 4, 18.0: 4, 21.0: 14}
+  Open paths (DSBs whose rearr. partner is outside chain) : 6
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 11]
+    Thm 6   — probable cycles ≈ log(n) = log(22) ≈ 3.09 → 3
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  Chain has 11 rejoins → (2n-1)!! matchings.
+  Exceeds tractable threshold (6 rejoins). Use Sheth bounds above.
+===================================================================
+
+===================================================================
+  Patient : PR-09-146
+  Θ(2, (1, 3))
+  n_rejoins=2  n_DSBs=4  k_local=2
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {2.0: 1, 21.0: 3}
+  Open paths (DSBs whose rearr. partner is outside chain) : 1
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=3
+  (max rank in proper AMG = n-1 = 3)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 2]
+    Thm 6   — probable cycles ≈ log(n) = log(4) ≈ 1.39 → 1
+    Thm 25  — rank(observed) = 3
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr2 (n=1, odd), chr21 (n=3, odd)
+
+  TOTAL PATHWAYS : 3  (ALL_INTER=0, ALL_INTRA=0, MIXED=3)
+
+  ── TABLE A : ALL_INTER matchings (0 / 3) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (0 / 3) ──
+  (structurally impossible — see odd-count chromosomes above)
+
+  ── TABLE C : MIXED matchings (3 / 3) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)           2    66.7%
+  C2                                 1    33.3%  ← observed
+  ──────────────────────────────────────────────
+  Total                              3   100.0%
+===================================================================
+
+===================================================================
+  Patient : P08-501
+  Θ(2, (1, 3))
+  n_rejoins=2  n_DSBs=4  k_local=2
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {1.0: 1, 21.0: 3}
+  Open paths (DSBs whose rearr. partner is outside chain) : 1
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=3
+  (max rank in proper AMG = n-1 = 3)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 2]
+    Thm 6   — probable cycles ≈ log(n) = log(4) ≈ 1.39 → 1
+    Thm 25  — rank(observed) = 3
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : False  — impossible because chr1 (n=1, odd), chr21 (n=3, odd)
+
+  TOTAL PATHWAYS : 3  (ALL_INTER=0, ALL_INTRA=0, MIXED=3)
+
+  ── TABLE A : ALL_INTER matchings (0 / 3) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (0 / 3) ──
+  (structurally impossible — see odd-count chromosomes above)
+
+  ── TABLE C : MIXED matchings (3 / 3) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)           2    66.7%
+  C2                                 1    33.3%  ← observed
+  ──────────────────────────────────────────────
+  Total                              3   100.0%
+===================================================================
+
+===================================================================
+  Patient : PR-STID0000000415
+  Θ(1, (2))
+  n_rejoins=1  n_DSBs=2  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 2}
+  Open paths (DSBs whose rearr. partner is outside chain) : 0
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=1
+  (max rank in proper AMG = n-1 = 1)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 1]
+    Thm 6   — probable cycles ≈ log(n) = log(2) ≈ 0.69 → 1
+    Thm 25  — rank(observed) = 1
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 1  (ALL_INTER=0, ALL_INTRA=1, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 1) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (1 / 1) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  C2                                 1   100.0%  ← observed
+  ──────────────────────────────────────────────
+  Total                              1   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 1) ──
+  (no matchings in this category)
+===================================================================
+
+===================================================================
+  Patient : PR-09-3983
+  Θ(1, (2))
+  n_rejoins=1  n_DSBs=2  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 2}
+  Open paths (DSBs whose rearr. partner is outside chain) : 0
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=1
+  (max rank in proper AMG = n-1 = 1)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 1]
+    Thm 6   — probable cycles ≈ log(n) = log(2) ≈ 0.69 → 1
+    Thm 25  — rank(observed) = 1
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 1  (ALL_INTER=0, ALL_INTRA=1, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 1) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (1 / 1) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  C2                                 1   100.0%  ← observed
+  ──────────────────────────────────────────────
+  Total                              1   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 1) ──
+  (no matchings in this category)
+===================================================================
+
+===================================================================
+  Patient : P04-1084
+  Θ(1, (10))
+  n_rejoins=5  n_DSBs=10  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 10}
+  Open paths (DSBs whose rearr. partner is outside chain) : 2
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 5]
+    Thm 6   — probable cycles ≈ log(n) = log(10) ≈ 2.30 → 2
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 945  (ALL_INTER=0, ALL_INTRA=945, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 945) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (945 / 945) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)         384    40.6%  ← observed
+  C2                               192    20.3%
+  C4                                96    10.2%
+  C6                                64     6.8%
+  C2 + C2                           48     5.1%
+  C4 + C2                           48     5.1%
+  C8                                48     5.1%
+  C6 + C2                           32     3.4%
+  C4 + C4                           12     1.3%
+  C4 + C2 + C2                      12     1.3%
+  C2 + C2 + C2                       8     0.8%
+  C2 + C2 + C2 + C2                  1     0.1%
+  ──────────────────────────────────────────────
+  Total                            945   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 945) ──
+  (no matchings in this category)
+===================================================================
+
+===================================================================
+  Patient : PR-08-784
+  Θ(1, (2))
+  n_rejoins=1  n_DSBs=2  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 2}
+  Open paths (DSBs whose rearr. partner is outside chain) : 0
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=1
+  (max rank in proper AMG = n-1 = 1)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 1]
+    Thm 6   — probable cycles ≈ log(n) = log(2) ≈ 0.69 → 1
+    Thm 25  — rank(observed) = 1
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 1  (ALL_INTER=0, ALL_INTRA=1, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 1) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (1 / 1) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  C2                                 1   100.0%  ← observed
+  ──────────────────────────────────────────────
+  Total                              1   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 1) ──
+  (no matchings in this category)
+===================================================================
+
+===================================================================
+  Patient : PR-08-2455
+  Θ(1, (2))
+  n_rejoins=1  n_DSBs=2  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 2}
+  Open paths (DSBs whose rearr. partner is outside chain) : 0
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=1
+  (max rank in proper AMG = n-1 = 1)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 1]
+    Thm 6   — probable cycles ≈ log(n) = log(2) ≈ 0.69 → 1
+    Thm 25  — rank(observed) = 1
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 1  (ALL_INTER=0, ALL_INTRA=1, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 1) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (1 / 1) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  C2                                 1   100.0%  ← observed
+  ──────────────────────────────────────────────
+  Total                              1   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 1) ──
+  (no matchings in this category)
+===================================================================
+
+===================================================================
+  Patient : P08-1042
+  Θ(1, (2))
+  n_rejoins=1  n_DSBs=2  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 2}
+  Open paths (DSBs whose rearr. partner is outside chain) : 0
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=1
+  (max rank in proper AMG = n-1 = 1)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 1]
+    Thm 6   — probable cycles ≈ log(n) = log(2) ≈ 0.69 → 1
+    Thm 25  — rank(observed) = 1
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 1  (ALL_INTER=0, ALL_INTRA=1, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 1) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (1 / 1) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  C2                                 1   100.0%  ← observed
+  ──────────────────────────────────────────────
+  Total                              1   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 1) ──
+  (no matchings in this category)
+===================================================================
+
+===================================================================
+  Patient : P05-1657
+  Θ(1, (2))
+  n_rejoins=1  n_DSBs=2  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 2}
+  Open paths (DSBs whose rearr. partner is outside chain) : 0
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=1
+  (max rank in proper AMG = n-1 = 1)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 1]
+    Thm 6   — probable cycles ≈ log(n) = log(2) ≈ 0.69 → 1
+    Thm 25  — rank(observed) = 1
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 1  (ALL_INTER=0, ALL_INTRA=1, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 1) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (1 / 1) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  C2                                 1   100.0%  ← observed
+  ──────────────────────────────────────────────
+  Total                              1   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 1) ──
+  (no matchings in this category)
+===================================================================
+
+===================================================================
+  Patient : P05-2709
+  Θ(1, (2))
+  n_rejoins=1  n_DSBs=2  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 2}
+  Open paths (DSBs whose rearr. partner is outside chain) : 0
+
+  OBSERVED CYCLE STRUCTURE : C2
+  n_cycles=1  rank=1
+  (max rank in proper AMG = n-1 = 1)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 1]
+    Thm 6   — probable cycles ≈ log(n) = log(2) ≈ 0.69 → 1
+    Thm 25  — rank(observed) = 1
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 1  (ALL_INTER=0, ALL_INTRA=1, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 1) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (1 / 1) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  C2                                 1   100.0%  ← observed
+  ──────────────────────────────────────────────
+  Total                              1   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 1) ──
+  (no matchings in this category)
+===================================================================
+
+===================================================================
+  Patient : PR-STID0000002872
+  Θ(1, (6))
+  n_rejoins=3  n_DSBs=6  k_local=1
+  NOTE: n_rejoins/b_i count only rows in the ERG chain
+        (anchor rows + inter_chr rows sharing anchor chromosomes).
+        Each chromosome likely has more DSBs outside this chain.
+  b_i (DSBs per chr, chain only) : {21.0: 6}
+  Open paths (DSBs whose rearr. partner is outside chain) : 1
+
+  OBSERVED CYCLE STRUCTURE : none (all open paths)
+  n_cycles=0  rank=N/A (no closed cycles in chain subset)
+
+  SHETH BOUNDS:
+    Prop 4  — cycle count ∈ [1, 3]
+    Thm 6   — probable cycles ≈ log(n) = log(6) ≈ 1.79 → 2
+    Thm 25  — rank(observed) = N/A (no closed cycles in chain subset)
+    Lem 14  — Lemma 14 regime (all b_i=1) : False
+    ALL_INTRA possible : True
+
+  TOTAL PATHWAYS : 15  (ALL_INTER=0, ALL_INTRA=15, MIXED=0)
+
+  ── TABLE A : ALL_INTER matchings (0 / 15) ──
+  (no matchings in this category)
+
+  ── TABLE B : ALL_INTRA matchings (15 / 15) ──
+  Cycle structure                Count        %
+  ----------------------------------------------
+  (none — open paths only)           8    53.3%  ← observed
+  C2                                 4    26.7%
+  C4                                 2    13.3%
+  C2 + C2                            1     6.7%
+  ──────────────────────────────────────────────
+  Total                             15   100.0%
+
+  ── TABLE C : MIXED matchings (0 / 15) ──
+  (no matchings in this category)
+===================================================================
+
+
+===================================================================
+  CYCLE STRUCTURE SUMMARY — all 26 ERG patients
+===================================================================
+  Patient                Type                   Θ                  Observed               Paths    Rank
+  ----------------------------------------------------------------------------------------------------
+  P07-4941               chromoplexy_embedded   Θ(12,(2,8,9,3,1,2,13,1,9,4,1,15)) C4 + C4                >10395   66
+  P01-28                 chromoplexy_embedded   Θ(8,(21,4,4,1,3,5,2,6)) none (all open paths)  >10395   N/A
+  PR-7520                chromoplexy_embedded   Θ(8,(1,10,3,1,1,2,5,1)) none (all open paths)  >10395   N/A
+  P05-3852               chromoplexy_embedded   Θ(8,(1,4,21,2,6,18,2,12)) none (all open paths)  >10395   N/A
+  PR-08-2153             chromoplexy_embedded   Θ(7,(1,1,1,1,5,18,1)) none (all open paths)  >10395   N/A
+  PR-07-4610             chromoplexy_embedded   Θ(7,(9,1,1,17,2,10,4)) none (all open paths)  >10395   N/A
+  PR-06-3199             chromoplexy_embedded   Θ(6,(6,1,2,2,3,2)) none (all open paths)  >10395   N/A
+  P09-37                 chromoplexy_embedded   Θ(6,(1,2,8,1,2,8)) C2                     >10395   21
+  P03-2345               chromoplexy_embedded   Θ(5,(1,14,11,1,7)) C4 + C4                >10395   32
+  P08-492                chromoplexy_embedded   Θ(4,(2,1,2,7))     none (all open paths)  10395    N/A
+  P03-1426               chromoplexy_embedded   Θ(4,(2,5,4,1))     C4                     10395    11
+  PR-04-1243             chromoplexy_embedded   Θ(4,(1,1,1,5))     C2                     105      7
+  PR-2621                chromoplexy_embedded   Θ(4,(6,1,1,4))     C4                     10395    11
+  P07-5037               chromoplexy_embedded   Θ(3,(3,6,1))       none (all open paths)  945      N/A
+  P09-1042               chromoplexy_embedded   Θ(3,(4,4,14))      none (all open paths)  >10395   N/A
+  PR-09-146              simple_fusion          Θ(2,(1,3))         C2                     3        3
+  P08-501                simple_fusion          Θ(2,(1,3))         C2                     3        3
+  PR-STID0000000415      simple_fusion          Θ(1,(2))           C2                     1        1
+  PR-09-3983             simple_fusion          Θ(1,(2))           C2                     1        1
+  P04-1084               simple_fusion          Θ(1,(10))          none (all open paths)  945      N/A
+  PR-08-784              simple_fusion          Θ(1,(2))           C2                     1        1
+  PR-08-2455             simple_fusion          Θ(1,(2))           C2                     1        1
+  P08-1042               simple_fusion          Θ(1,(2))           C2                     1        1
+  P05-1657               simple_fusion          Θ(1,(2))           C2                     1        1
+  P05-2709               simple_fusion          Θ(1,(2))           C2                     1        1
+  PR-STID0000002872      simple_fusion          Θ(1,(6))           none (all open paths)  15       N/A
